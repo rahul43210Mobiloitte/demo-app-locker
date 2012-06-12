@@ -115,18 +115,14 @@ public class DetectorService extends Service {
 	}
 
 	private void handleCommand(Intent intent){
-		// In this sample, we'll use the same text for the ticker and the expanded notification
 		CharSequence text = getText(R.string.service_running);
 
-		// Set the icon, scrolling text and timestamp
 		Notification notification = new Notification(R.drawable.statusbar_icon, text,
 				System.currentTimeMillis());
 
-		// The PendingIntent to launch our activity if the user selects this notification
 		PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
 				new Intent(this, AppLockerActivity.class), 0);
 
-		// Set the info for the views that show in the notification panel.
 		notification.setLatestEventInfo(this, text,
 				text, contentIntent);
 
@@ -174,7 +170,7 @@ public class DetectorService extends Service {
 					Matcher m = ActivityNamePattern.matcher(line);
 					if (!m.lookingAt()) continue;
 					if (m.groupCount()<5){
-						// Log.d("Detector", "Unknown problem while matching logcat output. Might be SDK version?");
+						 Log.d("Detector", "Unknown problem while matching logcat output. Might be SDK version?");
 						continue;
 					}
 
