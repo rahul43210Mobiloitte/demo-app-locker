@@ -102,7 +102,7 @@ public class ActivityStartingHandler implements ActivityStartingListener{
 
 	private void blockActivity(String packageName, String activityName) {
 		Log.i("Detector", "Blocking: " + packageName);
-		// Block!
+	
 		Intent lockIntent = new Intent(mContext, LockScreenActivity.class);
 		lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		
