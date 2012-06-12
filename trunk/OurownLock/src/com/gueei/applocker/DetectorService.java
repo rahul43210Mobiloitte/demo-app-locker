@@ -37,10 +37,7 @@ public class DetectorService extends Service {
     private Object[] mStartForegroundArgs = new Object[2];
     private Object[] mStopForegroundArgs = new Object[1];
     
-    /**
-     * This is a wrapper around the new startForeground method, using the older
-     * APIs if it is not available.
-     */
+    
     void startForegroundCompat(int id, Notification notification) {
         // If we have the new startForeground API, then use it.
         if (mStartForeground != null) {
