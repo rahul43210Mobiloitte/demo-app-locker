@@ -31,7 +31,6 @@ public class ActivityStartingHandler implements ActivityStartingListener{
 				String packagename = intent.getStringExtra(LockScreenActivity.EXTRA_PACKAGE_NAME);
 				if (AppLockerPreference.getInstance(mContext).getRelockTimeout() > 0){
 					if (tempAllowedPackages.containsKey(packagename)){
-						// Extend the time
 						Log.d("Detector", "Extending timeout for: " + packagename);
 						handler.removeCallbacks(tempAllowedPackages.get(packagename));
 					}
