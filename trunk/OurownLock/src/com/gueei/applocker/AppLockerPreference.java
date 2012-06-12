@@ -9,7 +9,7 @@ public class AppLockerPreference implements OnSharedPreferenceChangeListener {
 	public boolean isAutoStart() {
 		return mAutoStart;
 	}
-	
+
 	public boolean isServiceEnabled() {
 		return mServiceEnabled;
 	}
@@ -33,10 +33,6 @@ public class AppLockerPreference implements OnSharedPreferenceChangeListener {
 	private static final String PREF_APPLICATION_LIST = "application_list";
 	private static final String PREF_AUTO_START = "start_service_after_boot";
 	private static final String PREF_PASSWORD = "password";
-	
-	/**
-	 * Section for singleton pattern
-	 */
 	private SharedPreferences mPref;
 	private AppLockerPreference(Context context) {
 		mPref = PreferenceManager.getDefaultSharedPreferences(context);
@@ -70,11 +66,11 @@ public class AppLockerPreference implements OnSharedPreferenceChangeListener {
 	private String[] mApplicationList;
 	private String mPassword;
 	private int mRelockTimeout;
-	
+
 	public int getRelockTimeout(){
 		return mRelockTimeout;
 	}
-	
+
 	public String getPassword() {
 		return mPassword;
 	}
@@ -82,7 +78,7 @@ public class AppLockerPreference implements OnSharedPreferenceChangeListener {
 		mPassword = password;
 		mPref.edit().putString(PREF_PASSWORD, password);
 	}
-	
+
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
 		reloadPreferences();

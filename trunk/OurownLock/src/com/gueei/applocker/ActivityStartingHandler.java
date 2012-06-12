@@ -19,7 +19,7 @@ public class ActivityStartingHandler implements ActivityStartingListener{
 	private Hashtable<String, Runnable> tempAllowedPackages = new Hashtable<String, Runnable>();
 	private Handler handler;
 	private String lockScreenActivityName;
-	
+
 	public ActivityStartingHandler(Context context){
 		mContext = context;
 		handler = new Handler();
@@ -43,18 +43,16 @@ public class ActivityStartingHandler implements ActivityStartingListener{
 				lastRunningPackage = packagename;
 			}
 		}, new IntentFilter(LockScreenActivity.ACTION_APPLICATION_PASSED));
-		
+
 		lockScreenActivityName = ".LockScreenActivity" ;
 	}
-
 	private void log(){
-		String output = "temp allowed: ";
+		String output = "temp allowed:";
 		for(String p: tempAllowedPackages.keySet()){
 			output += p + ", ";
 		}
 		Log.d("Detector", output);
-	}
-	
+	}	
 	private class RemoveFromTempRunnable implements Runnable{
 		private String mPackageName;
 		public RemoveFromTempRunnable(String pname){
@@ -65,49 +63,45 @@ public class ActivityStartingHandler implements ActivityStartingListener{
 			tempAllowedPackages.remove(mPackageName);
 		}
 	}
-	
+
 	private String getRunningPackage(){
 		List<RunningTaskInfo> infos = mAm.getRunningTasks(1);
 		if (infos.size()<1) return null; 
 		RunningTaskInfo info = infos.get(0);
 		return info.topActivity.getPackageName();
 	}
-	
+
 	public void onActivityStarting(String packageName, String activityName) {
 		synchronized(this){
 			if (packageName.equals(mContext.getPackageName())){
-
 				if (activityName.equals(lockScreenActivityName)) return;
 				blockActivity(packageName, activityName);
 			}
-			
 			if (packageName.equals(lastRunningPackage)) return;
-			
+
 			String[] list = AppLockerPreference.getInstance(mContext).getApplicationList();
-			
+
 			if ((AppLockerPreference.getInstance(mContext).getRelockTimeout() > 0))
 				if (tempAllowedPackages.containsKey(packageName)) return;
-			
+
 			for(int i=0; i<list.length; i++){
 				if (list[i].equals(packageName)){
 					blockActivity(packageName, activityName);
 					break;
 				}
 			}
-			
+
 			lastRunningPackage = packageName;
 		}
 	}
 
 	private void blockActivity(String packageName, String activityName) {
 		Log.i("Detector", "Blocking: " + packageName);
-	
 		Intent lockIntent = new Intent(mContext, LockScreenActivity.class);
 		lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		
 		lockIntent.putExtra(LockScreenActivity.BlockedActivityName, activityName)
-			.putExtra(LockScreenActivity.BlockedPackageName, packageName);
-		
+		.putExtra(LockScreenActivity.BlockedPackageName, packageName);
+
 		mContext.startActivity(lockIntent);
 	}
 }
