@@ -39,7 +39,7 @@ public class DetectorService extends Service {
     
     
     void startForegroundCompat(int id, Notification notification) {
-        // If we have the new startForeground API, then use it.
+    
         if (mStartForeground != null) {
             mStartForegroundArgs[0] = Integer.valueOf(id);
             mStartForegroundArgs[1] = notification;
