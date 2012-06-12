@@ -77,9 +77,8 @@ public class ActivityStartingHandler implements ActivityStartingListener{
 	public void onActivityStarting(String packageName, String activityName) {
 		synchronized(this){
 			if (packageName.equals(mContext.getPackageName())){
-				// Of course cannot block lock screen
+
 				if (activityName.equals(lockScreenActivityName)) return;
-				// But we need to block preferences
 				blockActivity(packageName, activityName);
 			}
 			
