@@ -83,7 +83,6 @@ public class ApplicationListActivity extends Activity {
 				}
 			}
 
-			// Add default components 
 			ApplicationInfo info;
 			try {
 				info = getPackageManager().getApplicationInfo("com.android.packageinstaller", 0);
