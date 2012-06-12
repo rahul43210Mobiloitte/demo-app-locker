@@ -55,7 +55,7 @@ public class DetectorService extends Service {
 			return;
 		}
 
-		// Fall back on the old API.
+		
 		setForeground(true);
 		mNM.notify(id, notification);
 	}
@@ -99,7 +99,6 @@ public class DetectorService extends Service {
 
 		mThread.interrupt();
 
-		// Make sure our notification is gone.
 		stopForegroundCompat(R.string.service_running);
 	}
 
@@ -112,8 +111,6 @@ public class DetectorService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		handleCommand(intent);
-		// We want this service to continue running until it is explicitly
-		// stopped, so return sticky.
 		return Service.START_STICKY;
 	}
 
