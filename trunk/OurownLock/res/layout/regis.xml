@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="left"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+       />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/image47" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="fill" >
+
+        <TextView
+            android:id="@+id/meta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="METAOPTION"
+            android:textSize="10pt" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meta"
+            android:text="NAME"
+            android:textSize="10pt" />
+
+        <EditText
+            android:id="@+id/name_ed"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/name"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/name"
+            android:inputType="text"
+            android:padding="5dp" >
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/name"
+            android:text="USERNAME"
+            android:textSize="10pt" />
+
+        <TextView
+            android:id="@+id/password"
+            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/username"
+            android:text="PASSWORD"
+            android:textSize="10pt" />
+
+        <EditText
+            android:id="@+id/pword_ed"
+            android:password="true"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/password"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/username"
+            android:inputType="text"
+            android:padding="5dp" />
+
+        <EditText
+            android:id="@+id/user_ed"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/pword_ed"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/username"
+            android:inputType="text"
+            android:padding="5dp" >
+
+            <requestFocus />
+        </EditText>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="20mm"
+        android:text="REGISTER" />
+
+</LinearLayout>
