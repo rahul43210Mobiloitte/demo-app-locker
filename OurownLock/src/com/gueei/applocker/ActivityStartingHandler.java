@@ -3,9 +3,6 @@ package com.gueei.applocker;
 
 import java.util.Hashtable;
 import java.util.List;
-
-import com.example.HelloGridView.HelloGridViewActivity;
-
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
 import android.content.BroadcastReceiver;
