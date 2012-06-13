@@ -1,0 +1,416 @@
+package com.gueei.applocker;
+
+import com.gueei.applocker.R;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.Button;
+import android.widget.GridView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
+
+public class HelloGridViewActivity extends Activity {
+	static int a[] = new int[8];
+	int i = 0;
+	int myClickCount = 0;
+	int lstClickCount = 0;
+	DBAdapter db = new DBAdapter(this);
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main2);
+		db.open();
+		db.createTables();
+
+		Button done = (Button) findViewById(R.id.done);
+		Button cancel = (Button) findViewById(R.id.cancel);
+		GridView gridview = (GridView) findViewById(R.id.gridview);
+		gridview.setAdapter(new ImageAdapter1(this));
+
+		final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+		String condition = "_Id = '1'";
+		Cursor cursor = db.getAllRows("loginTable", condition);
+		String id = cursor.getString(cursor.getColumnIndex("u_name"));
+
+		if (id.length() == 0) {
+			alertDialog.setTitle("Long Click the Images ");
+			alertDialog.setMessage("Select and Remember");
+			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					Toast.makeText(getApplicationContext(), "Start Selection",
+							0).show();
+
+				}
+			});
+			alertDialog.setIcon(R.drawable.enter);
+			alertDialog.show();
+
+			done.setOnClickListener(new OnClickListener() {
+
+				public void onClick(View v) {
+
+					ContentValues newValues = new ContentValues();
+					newValues.put("first_img", a[0]);
+					newValues.put("second_img", a[1]);
+					newValues.put("third_img", a[2]);
+					newValues.put("fourth_img", a[3]);
+					newValues.put("fifth_img", a[4]);
+					newValues.put("sixth_img", a[5]);
+					newValues.put("seventh_img", a[6]);
+					newValues.put("eight_img", a[7]);
+
+					db.updateAllRow("Image", newValues, "img_Id= 1");
+
+
+					// TODO Auto-generated method stub
+					alertDialog
+					.setTitle("GOOD ");
+					alertDialog
+					.setMessage(" Image Selected");
+					alertDialog
+					.setButton(
+							"OK",
+							new DialogInterface.OnClickListener() {
+								public void onClick(
+										DialogInterface dialog,
+										int which) {Intent intent = new Intent(getBaseContext(),
+												RegistrationActivity.class);
+										startActivity(intent);}
+							});
+					alertDialog
+					.setIcon(R.drawable.correct);
+					alertDialog.show();
+
+
+				}
+			});
+			gridview.setOnItemLongClickListener(new OnItemLongClickListener() {
+				public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+						int arg2, long arg3) {
+					if (myClickCount < 8) {
+						a[myClickCount] = arg2;
+						Toast.makeText(
+								HelloGridViewActivity.this,
+								"Sequence No." + (myClickCount + 1)
+								+ " Image No. " + a[myClickCount], 0)
+								.show();
+						if (myClickCount <= 7) {
+
+							if (myClickCount == 7) {
+								while (--myClickCount >= 0) {
+									int seq = (7 - myClickCount);
+									Toast.makeText(
+											getApplicationContext(),
+											" YOU HAVE SELECTED IMAGE No. "
+													+ a[seq], 0).show();
+								}
+								String condition = "_Id = '1'";
+								Cursor cursor = db.getAllRows("loginTable",
+										condition);
+								String id = cursor.getString(cursor
+										.getColumnIndex("u_name"));
+								if (id.length() == 0) {
+
+									ContentValues newValues = new ContentValues();
+									newValues.put("first_img", a[0]);
+									newValues.put("second_img", a[1]);
+									newValues.put("third_img", a[2]);
+									newValues.put("fourth_img", a[3]);
+									newValues.put("fifth_img", a[4]);
+									newValues.put("sixth_img", a[5]);
+									newValues.put("seventh_img", a[6]);
+									newValues.put("eight_img", a[7]);
+
+									db.updateAllRow("Image", newValues,
+											"img_Id= 1");
+
+									alertDialog
+									.setTitle("GOOD ");
+									alertDialog
+									.setMessage(" Image Selected");
+									alertDialog
+									.setButton(
+											"OK",
+											new DialogInterface.OnClickListener() {
+												public void onClick(
+														DialogInterface dialog,
+														int which) {Intent intent = new Intent(getBaseContext(),
+																RegistrationActivity.class);
+														startActivity(intent);}
+											});
+									alertDialog
+									.setIcon(R.drawable.correct);
+									alertDialog.show();
+								}
+								/*
+								 * else{ db.getAllRows("Image", condition);
+								 * Intent intent =new Intent(getBaseContext(),
+								 * LoginPageActivity.class);
+								 * startActivity(intent); }
+								 */
+
+							}
+							countClick();
+						}
+					} else {
+						Toast.makeText(getApplicationContext(),
+								" Image Total " + myClickCount, 0).show();
+						alertDialog
+						.setTitle("Select atleast 3 and atmost 8 images ");
+						alertDialog.setMessage("LIMIT REACHED");
+						alertDialog.setButton("OK",
+								new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int which) {
+							}
+						});
+						alertDialog.setIcon(R.drawable.right);
+						alertDialog.show();
+
+					}
+					return true;
+				}
+			});
+
+		} else {
+			alertDialog.setTitle("Long Click the Images ");
+			alertDialog.setMessage("Start from the First then till last");
+			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					Toast.makeText(getApplicationContext(), "Start Selection",
+							0).show();
+
+				}
+			});
+			alertDialog.setIcon(R.drawable.enter);
+			alertDialog.show();
+
+			done.setOnClickListener(new OnClickListener() {
+
+				public void onClick(View v) {
+
+					String condition = "img_Id = '1'";
+					Cursor cursor = db.getAllRows("Image", condition);
+					int first_img = cursor.getInt(cursor
+							.getColumnIndex("first_img"));
+					int second_img = cursor.getInt(cursor
+							.getColumnIndex("second_img"));
+					int third_img = cursor.getInt(cursor
+							.getColumnIndex("third_img"));
+					int fourth_img = cursor.getInt(cursor
+							.getColumnIndex("fourth_img"));
+					int fifth_img = cursor.getInt(cursor
+							.getColumnIndex("fifth_img"));
+					int sixth_img = cursor.getInt(cursor
+							.getColumnIndex("sixth_img"));
+					int seventh_img = cursor.getInt(cursor
+							.getColumnIndex("seventh_img"));
+					int eight_img = cursor.getInt(cursor
+							.getColumnIndex("eight_img"));
+					db.getAllRows("Image", condition);
+					while (--lstClickCount >= 0) {
+						int seq = (7 - lstClickCount);
+
+					}
+					if (a[0] == first_img) {
+						if (a[1] == second_img) {
+							if (a[2] == third_img) {
+								if (a[3] == fourth_img) {
+									if (a[4] == fifth_img) {
+										if (a[5] == sixth_img) {
+											if (a[6] == seventh_img) {
+												if (a[7] == eight_img) {
+													Intent intent = new Intent(
+															getBaseContext(),
+															LoginPageActivity.class);
+													startActivity(intent);
+
+												} else {wrongselection();}
+
+											} else {wrongselection();}
+
+										} else {wrongselection();}
+
+									} else {wrongselection();}
+
+								} else {wrongselection();}
+
+							} else {wrongselection();}
+
+						} else {wrongselection();}
+
+					} else {wrongselection();}
+
+
+
+					// TODO Auto-generated method stub
+
+				}
+
+				private void wrongselection() {
+					// TODO Auto-generated method stub
+					alertDialog
+					.setTitle("STOP ");
+					alertDialog
+					.setMessage("Wrong Image Selected");
+					alertDialog
+					.setButton(
+							"OK",
+							new DialogInterface.OnClickListener() {
+								public void onClick(
+										DialogInterface dialog,
+										int which) {
+									Intent intent = new Intent(getApplicationContext(),HelloGridViewActivity.class);
+									finish();
+									startActivity(intent);
+
+								}
+							});
+					alertDialog
+					.setIcon(R.drawable.wrong);
+					alertDialog.show();
+				}
+			});
+			gridview.setOnItemLongClickListener(new OnItemLongClickListener() {
+				public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+						int arg2, long arg3) {
+					if (lstClickCount < 8) {
+						a[lstClickCount] = arg2;
+						Toast.makeText(
+								HelloGridViewActivity.this,
+								"Sequence No." + (lstClickCount + 1)
+								+ " Image No. " + a[lstClickCount], 0)
+								.show();
+						if (lstClickCount <= 7) {
+							if (lstClickCount == 7) {
+
+								String condition = "img_Id = '1'";
+								Cursor cursor = db.getAllRows("Image",
+										condition);
+								int first_img = cursor.getInt(cursor
+										.getColumnIndex("first_img"));
+								int second_img = cursor.getInt(cursor
+										.getColumnIndex("second_img"));
+								int third_img = cursor.getInt(cursor
+										.getColumnIndex("third_img"));
+								int fourth_img = cursor.getInt(cursor
+										.getColumnIndex("fourth_img"));
+								int fifth_img = cursor.getInt(cursor
+										.getColumnIndex("fifth_img"));
+								int sixth_img = cursor.getInt(cursor
+										.getColumnIndex("sixth_img"));
+								int seventh_img = cursor.getInt(cursor
+										.getColumnIndex("seventh_img"));
+								int eight_img = cursor.getInt(cursor
+										.getColumnIndex("eight_img"));
+								db.getAllRows("Image", condition);
+								while (--lstClickCount >= 0) {
+									int seq = (7 - lstClickCount);
+
+								}
+								if (a[0] == first_img) {
+									if (a[1] == second_img) {
+										if (a[2] == third_img) {
+											if (a[3] == fourth_img) {
+												if (a[4] == fifth_img) {
+													if (a[5] == sixth_img) {
+														if (a[6] == seventh_img) {
+															if (a[7] == eight_img) {
+																Intent intent = new Intent(
+																		getBaseContext(),
+																		LoginPageActivity.class);
+																startActivity(intent);
+
+															} else {wrongselection();}
+
+														} else {wrongselection();}
+
+													} else {wrongselection();}
+
+												} else {wrongselection();}
+
+											} else {wrongselection();}
+
+										} else {wrongselection();}
+
+									} else {wrongselection();}
+
+								} else {wrongselection();}
+
+							}
+							lstcountClick();
+						}
+					}
+
+					return true;
+				}
+
+				private void wrongselection() {
+					// TODO Auto-generated method stub
+
+					// TODO Auto-generated method stub
+					alertDialog
+					.setTitle("STOP ");
+					alertDialog
+					.setMessage("Wrong Image Selected");
+					alertDialog
+					.setButton(
+							"OK",
+							new DialogInterface.OnClickListener() {
+								public void onClick(
+										DialogInterface dialog,
+										int which) {
+									Intent intent = new Intent(getApplicationContext(),HelloGridViewActivity.class);
+									finish();
+									startActivity(intent);
+
+								}
+							});
+					alertDialog
+					.setIcon(R.drawable.wrong);
+					alertDialog.show();
+
+				}
+			});
+		}
+
+		// gridview.onTouchEvent(null);
+		gridview.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View v,
+					int position, long id) {
+				Toast.makeText(HelloGridViewActivity.this, "" + position, 0)
+				.show();
+			}
+		});
+		cancel.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				System.exit(0);
+			}
+		});
+
+	}
+
+	protected void countClick() {
+		// TODO Auto-generated method stub
+		myClickCount++;
+	}
+
+	protected void lstcountClick() {
+		// TODO Auto-generated method stub
+		lstClickCount++;
+	}
+
+}
