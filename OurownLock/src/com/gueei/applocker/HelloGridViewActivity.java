@@ -20,6 +20,11 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class HelloGridViewActivity extends Activity {
 	static int a[] = new int[8];
+	public static final String BlockedPackageName = "locked package name";
+	public static final String BlockedActivityName = "locked activity name";
+	public static final String ACTION_APPLICATION_PASSED = "com.gueei.applocker.applicationpassedtest";
+	public static final String EXTRA_PACKAGE_NAME = "com.gueei.applocker.extra.package.name";
+
 	int i = 0;
 	int myClickCount = 0;
 	int lstClickCount = 0;
