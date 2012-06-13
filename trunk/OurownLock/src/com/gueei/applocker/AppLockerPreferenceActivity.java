@@ -9,7 +9,7 @@ import android.preference.PreferenceManager;
 
 public class AppLockerPreferenceActivity extends PreferenceActivity {
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) { 
 	    super.onCreate(savedInstanceState);
 	    this.addPreferencesFromResource(R.xml.preferences);
 	    PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(serviceEnabledListener);
