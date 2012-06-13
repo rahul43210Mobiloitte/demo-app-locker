@@ -1,0 +1,327 @@
+package com.gueei.applocker;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.Map.Entry;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
+
+public class DBAdapter 
+{
+	private static final String TAG = "DBAdapter";
+
+	public static int DATABASE_VERSION = 1;
+	public String ROWID = "";
+	public static String DATABASE_PATH = "/data/data/com.example.usinghelper/databases/";
+	public static String DATABASE_NAME = "myDatabase.db";
+
+	private static Context context = null; 
+
+	private DatabaseHelper DBHelper;
+	private SQLiteDatabase db;
+
+	private static final String TABLE_CREATE[] =
+		{"CREATE TABLE IF NOT EXISTS loginTable (_Id INTEGER NOT NULL PRIMARY KEY autoincrement,  r_name nvarchar(50),u_name nvarchar(50),p_word nvarchar(50));",
+		"CREATE TABLE IF NOT EXISTS Image ([img_Id]  int NOT NULL PRIMARY KEY,  [first_img] int NOT NULL,  [second_img]  int NOT NULL,  [third_img]  int NOT NULL,  [fourth_img]  int,  [fifth_img]  int,  [sixth_img]  int,  [seventh_img]  int,  [eight_img]  int );" ,
+		"CREATE TABLE IF NOT EXISTS Icon ([icon_Id]  int NOT NULL PRIMARY KEY,  [red_img] int NOT NULL,  [green_img]  int NOT NULL);"
+		};
+
+	private static final String TABLE_INSERT[] =
+		{ 
+		
+		"INSERT OR IGNORE INTO loginTable VALUES(1,'','','')",
+		"INSERT OR IGNORE INTO Image VALUES(1,'','','','','','','','')",
+		"INSERT OR IGNORE INTO Icon VALUES(1,'0','1')"
+		
+		/*"INSERT OR IGNORE INTO TempTable VALUES(1, 'False', 'False','False', 0)",
+		"INSERT OR IGNORE INTO Users VALUES(1,'','','','','False','','','False','')",
+		"INSERT OR IGNORE INTO RecSpaceDetails VALUES(1,'','','','','','')",
+		"INSERT OR IGNORE INTO WeekDay VALUES(3, 'Tuesday', 'False')" ,
+		"INSERT OR IGNORE INTO WeekDay VALUES(4, 'Wednesday', 'False')" ,
+		"INSERT OR IGNORE INTO WeekDay VALUES(5, 'Thursday', 'False')" ,
+		"INSERT OR IGNORE INTO WeekDay VALUES(6, 'Friday', 'False')" ,
+		"INSERT OR IGNORE INTO WeekDay VALUES(7, 'Saturday', 'False')"
+		"INSERT OR IGNORE INTO ActivationTime VALUES(1, '00:00', '23:59')"*/
+		};
+	/*
+    private static final String ALL_TABLE_DELETE[] = 
+	{"DELETE FROM BlockedNumber;" ,
+	"VACUUM"};
+	 */
+	public DBAdapter(Context ctx) {
+		DBAdapter.context = ctx;
+		DBHelper = new DatabaseHelper(context);
+	}
+
+	public static class DatabaseHelper extends SQLiteOpenHelper{
+		DatabaseHelper(Context context) {
+			super(context, DATABASE_NAME, null, DATABASE_VERSION);
+		}
+
+		@Override
+		public void onCreate(SQLiteDatabase db){}
+
+		@Override
+		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+			onCreate(db);
+		}
+	}// end of DatabaseHelper class    
+
+
+	//---opens the database---
+	public DBAdapter open() throws SQLException {
+		db = DBHelper.getWritableDatabase();
+		return this;
+	}
+	public void createTables() throws SQLException{
+		if(db.isOpen()){
+
+			try{
+				for(int i=0; i<TABLE_CREATE.length;i++){
+					db.execSQL(TABLE_CREATE[i]);
+				}
+
+				for(int i=0; i<TABLE_INSERT.length;i++){
+					db.execSQL(TABLE_INSERT[i]);
+				} 
+				/*File database = new File(DATABASE_PATH + DATABASE_NAME);
+	    		if(!database.exists() || database.length() == 3072){
+		    		// Open a connection to the database file
+		    		InputStream fileInput = context.getAssets().open("database/" + DATABASE_NAME);
+		    		OutputStream fileOutput= new FileOutputStream(DATABASE_PATH + DATABASE_NAME);
+		    		if(fileInput != null && fileOutput != null){
+		    			copyFile(fileInput, fileOutput);
+		    		}
+	    		}*/
+			}catch(SQLException e){
+				Log.d(TAG, e.getMessage());
+			}
+			catch(Exception e){
+				Log.d(TAG, e.getMessage());
+			}
+		}
+	}
+
+	public static void copyFile(InputStream inFile, OutputStream outFile){
+		try{
+			byte[] buf = new byte[1024];
+			int len;
+			while ((len = inFile.read(buf)) > 0){
+				outFile.write(buf, 0, len);
+			}
+			inFile.close();
+			outFile.close();
+		}
+		catch(FileNotFoundException ex){
+			Log.d(TAG, "IO Error: "+ex.getMessage());
+		}
+		catch(IOException e){
+			Log.d(TAG, "Error: "+e.getMessage());
+		}
+	}
+
+	public void deleteTables() throws SQLException{
+		if(db.isOpen()){
+			try{
+				File dataFile = new File("/data/data/com.example.usinghelper/databases/"+DATABASE_NAME);
+				if(dataFile.exists()){
+					dataFile.delete();
+				}
+
+			}catch(SQLException e){
+				Log.d(TAG, e.getMessage());
+			}
+			catch(Exception e){
+				Log.d(TAG, e.getMessage());
+			}
+		}
+	}
+	//---closes the database---    
+	public void close() {
+		if(db.isOpen()){
+			DBHelper.close();
+		}
+	}
+
+	//---insert a rows into the database---
+	public long insertRow(String TABLE_NAME, ContentValues data) 
+	{
+		String query = "", colName = "", colValue = "";
+		long result = -1;
+		try{
+			if(data.size() > 0){
+				ArrayList<String> ar = new ArrayList<String>();
+				Set<Entry<String, Object>> s = data.valueSet();
+				for (Entry<String, Object> entry : s) {
+					ar.add(entry.getKey());
+				}
+				for(int i=0; i<ar.size(); i++){
+					if(data.getAsString(ar.get(i)) != null && !data.getAsString(ar.get(i)).equals("null")){
+						if(colName != "" && colValue != ""){colName += ", ";colValue += ", ";}
+						colName = colName + ar.get(i);
+						colValue = colValue + "'"+data.getAsString(ar.get(i)).replaceAll("'", "''")+"'";
+					}
+				}
+				query = "INSERT OR REPLACE INTO "+TABLE_NAME+" ( "+colName+" ) VALUES( "+colValue+" );";
+				db.execSQL(query);
+				result = 1;
+			}
+		}catch(SQLException e){
+			Log.d(TAG, e.getMessage());
+		}
+		catch(Exception e){
+			Log.d(TAG, e.getMessage());
+		}
+		return result;
+		//return db.insert(TABLE_NAME, null, data);
+	}
+
+	//---deletes a particular title---
+	public boolean deleteRow(String TABLE_NAME, String condition) 
+	{
+		boolean result = false;
+		if(db.isOpen()){
+			try{
+				result = db.delete(TABLE_NAME, condition, null) > 0;
+			}
+			catch(SQLException e){
+				Log.d(TAG, e.getMessage());
+			}
+			catch(Exception e){
+				Log.d(TAG, e.getMessage());
+			}
+		}
+		return result;
+	}
+
+	//---retrieves a particular rows---
+	public Cursor query(String query) throws SQLException 
+	{
+		Cursor mCursor = null;
+		if(db.isOpen()){
+			try{
+				mCursor = 
+						db.rawQuery(query, null);
+				if (mCursor != null) {
+					mCursor.moveToFirst();
+				}
+			}catch(SQLException e){
+				Log.d(TAG, e.getMessage());
+			}
+			catch(Exception e){
+				Log.d(TAG, e.getMessage());
+			}
+		}
+		return mCursor;
+	}
+
+	//---retrieves all the rows---
+	public Cursor getAllRows(String TABLE_NAME, String condition) {
+		Cursor mCursor = null;
+		if(db.isOpen()){
+			try{
+				mCursor = db.query(TABLE_NAME,null,condition,null,null,null,null);
+				if (mCursor != null) {
+					mCursor.moveToFirst();
+				}
+				if (mCursor != null) {
+					mCursor.moveToFirst();
+				}
+			}catch(SQLException e){
+				Log.d(TAG, e.getMessage());
+			}
+			catch(Exception e){
+				Log.d(TAG, e.getMessage());
+			}
+		}
+		return mCursor;
+	}
+
+	//---retrieves a particular rows---
+	public Cursor getRow(String TABLE_NAME,String un,String pw) throws SQLException 
+	{
+		Cursor mCursor = null;
+		String condition ="u_name = '"+un+"' AND p_word = '"+pw+"'";
+		if(db.isOpen()){
+			try{
+				mCursor = 
+						db.query(true, TABLE_NAME,null,condition,null,null,null,null,null);
+				if (mCursor != null) {
+					mCursor.moveToFirst();
+				}
+				else{
+					Toast.makeText(context, "Invalid Login Credentials", 0).show();
+				}
+			}catch(SQLException e){
+				Log.d(TAG, e.getMessage());
+			}
+			catch(Exception e){
+				Log.d(TAG, e.getMessage());
+			}
+		}
+		/*String value =mCursor.getString(mCursor.getColumnIndex("u_name"));
+		Toast.makeText(context, value, 1).show();*/
+		return mCursor;
+
+	}
+
+	//---updates a rows---
+	public boolean updateRow(String TABLE_NAME, String rowId, ContentValues data) {
+		boolean result = false;
+		if(db.isOpen()){
+			try{
+				result = db.update(TABLE_NAME, data, ROWID + " = '" + rowId + "'", null) > 0;
+			}catch(SQLException e){
+				Log.d(TAG, e.getMessage());
+			}
+			catch(Exception e){
+				Log.d(TAG, e.getMessage());
+			}
+		}
+		return result;
+	}
+	//---updates a rows---
+	public boolean updateAllRow(String TABLE_NAME, ContentValues data, String condition) {
+		boolean result = false;
+		if(db.isOpen()){
+			try{
+				result = db.update(TABLE_NAME, data, condition, null) > 0;
+			}catch(SQLException e){
+				Log.d(TAG, e.getMessage());
+			}
+			catch(Exception e){
+				Log.d(TAG, e.getMessage());
+			}
+		}
+		return result;
+	}
+	//---executes a query---
+	public boolean executeQuery(String QUERY) {
+		boolean result = false;
+		if(db.isOpen()){
+			try{
+				db.execSQL(QUERY);
+				result = true;
+			}catch(SQLException e){
+				Log.d(TAG, e.getMessage());
+			}
+			catch(Exception e){
+				Log.d(TAG, e.getMessage());
+			}
+		}
+		return result;
+	}
+
+
+}//end of DBAdapter
