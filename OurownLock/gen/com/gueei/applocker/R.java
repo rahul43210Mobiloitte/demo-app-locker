@@ -28,24 +28,71 @@ public final class R {
     }
     public static final class drawable {
         public static final int applicationlist_item_selected=0x7f020000;
-        public static final int icon=0x7f020001;
-        public static final int important=0x7f020002;
-        public static final int launcher_icon=0x7f020003;
-        public static final int lockicons=0x7f020004;
-        public static final int lockscreen_button=0x7f020005;
-        public static final int lockscreen_button_normal=0x7f020006;
-        public static final int lockscreen_button_pressed=0x7f020007;
-        public static final int lockscreen_checkbutton=0x7f020008;
-        public static final int statusbar_icon=0x7f020009;
-        public static final int unlock=0x7f02000a;
+        public static final int correct=0x7f020001;
+        public static final int enter=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int icon=0x7f020004;
+        public static final int image47=0x7f020005;
+        public static final int important=0x7f020006;
+        public static final int launcher_icon=0x7f020007;
+        public static final int lockicons=0x7f020008;
+        public static final int lockscreen_button=0x7f020009;
+        public static final int lockscreen_button_normal=0x7f02000a;
+        public static final int lockscreen_button_pressed=0x7f02000b;
+        public static final int lockscreen_checkbutton=0x7f02000c;
+        public static final int right=0x7f02000d;
+        public static final int sample_0=0x7f02000e;
+        public static final int sample_1=0x7f02000f;
+        public static final int sample_2=0x7f020010;
+        public static final int sample_3=0x7f020011;
+        public static final int sample_4=0x7f020012;
+        public static final int sample_5=0x7f020013;
+        public static final int sample_6=0x7f020014;
+        public static final int sample_7=0x7f020015;
+        public static final int statusbar_icon=0x7f020016;
+        public static final int unlock=0x7f020017;
+        public static final int wrong=0x7f020018;
+    }
+    public static final class id {
+        public static final int appicon=0x7f090012;
+        public static final int appslist=0x7f090008;
+        public static final int apptitle=0x7f090013;
+        public static final int button1=0x7f090007;
+        public static final int cancel=0x7f090015;
+        public static final int done=0x7f090000;
+        public static final int editText1=0x7f090004;
+        public static final int editText2=0x7f090006;
+        public static final int gridview=0x7f090009;
+        public static final int img=0x7f090001;
+        public static final int meta=0x7f090002;
+        public static final int name=0x7f09000a;
+        public static final int name_ed=0x7f09000b;
+        public static final int p_word=0x7f090005;
+        public static final int password=0x7f09000d;
+        public static final int pword_ed=0x7f09000e;
+        public static final int register=0x7f090010;
+        public static final int title_bar=0x7f090014;
+        public static final int toggleImage=0x7f090011;
+        public static final int u_name=0x7f090003;
+        public static final int user_ed=0x7f09000f;
+        public static final int username=0x7f09000c;
     }
     public static final class layout {
         public static final int applicationlist=0x7f030000;
         public static final int applicationlist_item=0x7f030001;
-        public static final int lockscreen=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int preferences=0x7f030004;
-        public static final int tab=0x7f030005;
+        public static final int button=0x7f030002;
+        public static final int homepage=0x7f030003;
+        public static final int lockscreen=0x7f030004;
+        public static final int login=0x7f030005;
+        public static final int main=0x7f030006;
+        public static final int main1=0x7f030007;
+        public static final int main2=0x7f030008;
+        public static final int menu_list=0x7f030009;
+        public static final int preferences=0x7f03000a;
+        public static final int regis=0x7f03000b;
+        public static final int row=0x7f03000c;
+        public static final int tab=0x7f03000d;
+        public static final int titlebar=0x7f03000e;
     }
     public static final class string {
         public static final int appLockerPreferenceActivityName=0x7f070002;

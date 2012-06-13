@@ -1,7 +1,10 @@
 package com.gueei.applocker;
 
+
 import java.util.Hashtable;
 import java.util.List;
+
+import com.example.HelloGridView.HelloGridViewActivity;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
@@ -19,7 +22,6 @@ public class ActivityStartingHandler implements ActivityStartingListener{
 	private Hashtable<String, Runnable> tempAllowedPackages = new Hashtable<String, Runnable>();
 	private Handler handler;
 	private String lockScreenActivityName;
-
 	public ActivityStartingHandler(Context context){
 		mContext = context;
 		handler = new Handler();
@@ -97,7 +99,8 @@ public class ActivityStartingHandler implements ActivityStartingListener{
 
 	private void blockActivity(String packageName, String activityName) {
 		Log.i("Detector", "Blocking: " + packageName);
-		Intent lockIntent = new Intent(mContext, LockScreenActivity.class);
+		//Intent lockIntent = new Intent(mContext, LockScreenActivity.class);
+		Intent lockIntent=new Intent(mContext, HelloGridViewActivity.class);
 		lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		lockIntent.putExtra(LockScreenActivity.BlockedActivityName, activityName)
 		.putExtra(LockScreenActivity.BlockedPackageName, packageName);
