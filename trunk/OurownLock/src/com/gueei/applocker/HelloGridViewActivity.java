@@ -352,9 +352,10 @@ public class HelloGridViewActivity extends Activity {
 									} else {wrongselection();}
 
 								} else {wrongselection();}
-
+								cursor.close();
 							}
 							lstcountClick();
+							
 						}
 					}
 
