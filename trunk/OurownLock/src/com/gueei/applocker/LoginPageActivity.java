@@ -13,13 +13,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.gueei.applocker.AppLockerActivity;
 import com.gueei.applocker.R;
+
 public class LoginPageActivity extends Activity {
 	private static final String DATABASE_NAME = "myDatabase.db";
 	private static final String DATABASE_TABLE = "loginTable";
 	private static final String rname = null;
+
 	public static final String BlockedPackageName = "locked package name";
 	public static final String BlockedActivityName = "locked activity name";
 	public static final String ACTION_APPLICATION_PASSED = "com.gueei.applocker.applicationpassedtest";
@@ -27,80 +28,87 @@ public class LoginPageActivity extends Activity {
 
 	DBAdapter db= new DBAdapter(this);
 	SQLiteDatabase myDatabase;
-	private EditText editText1,editText2;
+	private EditText editText1, editText2;
 
-
-	private void check(String un,String pw) {
-		try{String value = "**Insert Correct Credentials**";
-		db.open();
-		String id= "0";
-		String whereCheck = "u_name = '"+un+"' AND p_word = '"+pw+"'";
-		Cursor cursor =	db.getRow(DATABASE_TABLE, un, pw);//myDatabase.query(DATABASE_TABLE,null,whereCheck,null , null, null,null);
-		if(cursor != null && cursor.getCount() >0)
-		{
-
-			//Toast.makeText(getBaseContext(), " PROFILE", Toast.LENGTH_SHORT).show();
-
-			Intent intent = new Intent(getApplicationContext(), AppLockerActivity.class);
-			startActivity(intent);
-		}
-		else{
-			Toast.makeText(getBaseContext(), " INVALID CREDENTIALS", Toast.LENGTH_SHORT).show();
-		}
-		}
-		catch(SQLException ex){
-			Toast.makeText(getBaseContext(), " INVALID CREDENTIALS", Toast.LENGTH_SHORT).show();
+	private void check(String un, String pw) {
+		try {
+			String value = "**Insert Correct Credentials**";
+			db.open();
+			String id = "0";
+			String whereCheck = "u_name = '" + un + "' AND p_word = '" + pw
+					+ "'";
+			Cursor cursor = db.getRow(DATABASE_TABLE, un, pw);// myDatabase.query(DATABASE_TABLE,null,whereCheck,null
+																// , null,
+																// null,null);
+			if (cursor != null && cursor.getCount() > 0) {
+				Intent intent = new Intent(getApplicationContext(),
+						AppLockerActivity.class);
+				startActivity(intent);
+			} else {
+				Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",
+						Toast.LENGTH_SHORT).show();
+			}
+			cursor.close();
+		} catch (SQLException ex) {
+			Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",
+					Toast.LENGTH_SHORT).show();
 		}
 	
 		db.close();
 	}
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
 		ImageView image = (ImageView) findViewById(R.id.img);
 		image.setImageResource(R.drawable.image47);
-		//db.open();
-		final Button login= (Button) findViewById(R.id.button1);
-		//final Button reg =(Button) findViewById(R.id.register);
-		editText1 =(EditText) findViewById(R.id.editText1);
-		editText2 =(EditText) findViewById(R.id.editText2);
+		final Button login = (Button) findViewById(R.id.button1);
+		// final Button reg =(Button) findViewById(R.id.register);
+		editText1 = (EditText) findViewById(R.id.editText1);
+		editText2 = (EditText) findViewById(R.id.editText2);
+		{		login.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					String un = editText1.getText().toString();
+					int user_length = un.length();
+					switch (user_length) {
 
+					case 0:
+						Toast.makeText(getBaseContext(), "Empty username",
+								Toast.LENGTH_SHORT).show();
+						break;
 
-		{ login.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				String un = editText1.getText().toString();
-				int user_length=un.length();
-				switch (user_length) {
+					default: {
+						{
+							String pn = editText2.getText().toString();
+							int pass_length = pn.length();
 
-				case 0:Toast.makeText(getBaseContext(), "Empty username", Toast.LENGTH_SHORT).show();
-				break;
-
-				default:
-				{
-					{  String pn = editText2.getText().toString();
-					int pass_length=pn.length();
-
-					switch (pass_length) {
-					case 0:Toast.makeText(getBaseContext(), "  Enter Password", Toast.LENGTH_SHORT).show();
-					break;
-					default:					
-					{
-						check(un,pn);
+							switch (pass_length) {
+							case 0:
+								Toast.makeText(getBaseContext(),
+										"  Enter Password", Toast.LENGTH_SHORT)
+										.show();
+								break;
+							default: {
+								check(un, pn);
+							}
+							}
+						}
+						break;
 					}
-
 					}
-
-
-					}
-					break;}
-				} 
-			}
-		});
+				}
+			});
 		}
 	}
 	@Override
+
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			finishActivity(0);
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
 	public void onBackPressed() {
     	Intent intent = new Intent();
     	intent
@@ -111,4 +119,3 @@ public class LoginPageActivity extends Activity {
     	finish();
 	}
 }
-
