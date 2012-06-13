@@ -46,6 +46,7 @@ public class LoginPageActivity extends Activity {
 		catch(SQLException ex){
 			Toast.makeText(getBaseContext(), " INVALID CREDENTIALS", Toast.LENGTH_SHORT).show();
 		}
+	
 		db.close();
 	}
 
