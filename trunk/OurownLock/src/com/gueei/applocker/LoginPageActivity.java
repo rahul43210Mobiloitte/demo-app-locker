@@ -20,6 +20,11 @@ public class LoginPageActivity extends Activity {
 	private static final String DATABASE_NAME = "myDatabase.db";
 	private static final String DATABASE_TABLE = "loginTable";
 	private static final String rname = null;
+	public static final String BlockedPackageName = "locked package name";
+	public static final String BlockedActivityName = "locked activity name";
+	public static final String ACTION_APPLICATION_PASSED = "com.gueei.applocker.applicationpassedtest";
+	public static final String EXTRA_PACKAGE_NAME = "com.gueei.applocker.extra.package.name";
+
 	DBAdapter db= new DBAdapter(this);
 	SQLiteDatabase myDatabase;
 	private EditText editText1,editText2;
@@ -96,14 +101,14 @@ public class LoginPageActivity extends Activity {
 		}
 	}
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event)  {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-
-
-			finishActivity(0);
-			return true;
-		}
-		return super.onKeyDown(keyCode, event);
+	public void onBackPressed() {
+    	Intent intent = new Intent();
+    	intent
+    		.setAction(Intent.ACTION_MAIN)
+    		.addCategory(Intent.CATEGORY_HOME)
+    		.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    	startActivity(intent);
+    	finish();
 	}
 }
 
