@@ -163,20 +163,15 @@ public class DetectorService extends Service {
 				String line;
 				// Check if it matches the pattern
 				while(((line=br.readLine()) != null) && !this.isInterrupted()){
-
 					// Ignore launchers
 					if (line.contains("cat=[" + Intent.CATEGORY_HOME + "]")) continue;
-
 					Matcher m = ActivityNamePattern.matcher(line);
 					if (!m.lookingAt()) continue;
 					if (m.groupCount()<5){
 						 Log.d("Detector", "Unknown problem while matching logcat output. Might be SDK version?");
 						continue;
 					}
-
-
 					if (mListener!=null) mListener.onActivityStarting(m.group(2), m.group(4));
-
 					Log.i("Detector", "Found activity launching: " + m.group(2) + "  /   " + m.group(4));
 				}
 			} catch (IOException e) {

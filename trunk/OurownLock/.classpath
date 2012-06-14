@@ -5,6 +5,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="src" path="AndroidBinding_src"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry exported="true" kind="lib" path="D:/rar wrkspace/android.binding.0.4a.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sinhas.METAOPTIONLLC/Desktop/android.binding.0.4a.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

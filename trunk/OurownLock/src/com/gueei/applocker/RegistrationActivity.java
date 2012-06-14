@@ -98,8 +98,7 @@ public class RegistrationActivity extends Activity {
 
 	private void insertEntry(){
 	
-		ContentValues newValues = new ContentValues();
-		
+		ContentValues newValues = new ContentValues();		
 		newValues.put(ID, j);
 		newValues.put(NAME, name_ed.getText().toString());
 		newValues.put(USERNAME, user_ed.getText().toString());

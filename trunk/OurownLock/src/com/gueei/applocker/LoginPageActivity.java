@@ -25,7 +25,7 @@ public class LoginPageActivity extends Activity {
 	public static final String BlockedActivityName = "locked activity name";
 	public static final String ACTION_APPLICATION_PASSED = "com.gueei.applocker.applicationpassedtest";
 	public static final String EXTRA_PACKAGE_NAME = "com.gueei.applocker.extra.package.name";
-
+	ActivityStartingHandler ash;
 	DBAdapter db= new DBAdapter(this);
 	SQLiteDatabase myDatabase;
 	private EditText editText1, editText2;
@@ -35,25 +35,29 @@ public class LoginPageActivity extends Activity {
 			String value = "**Insert Correct Credentials**";
 			db.open();
 			String id = "0";
-			String whereCheck = "u_name = '" + un + "' AND p_word = '" + pw
-					+ "'";
+			String whereCheck = "u_name = '" + un + "' AND p_word = '" + pw	+ "'";
 			Cursor cursor = db.getRow(DATABASE_TABLE, un, pw);// myDatabase.query(DATABASE_TABLE,null,whereCheck,null
 																// , null,
-																// null,null);
+			cursor.close();													// null,null);
 			if (cursor != null && cursor.getCount() > 0) {
 				Intent intent = new Intent(getApplicationContext(),
 						AppLockerActivity.class);
 				startActivity(intent);
+				/*this.sendBroadcast(
+						new Intent()
+							.setAction(ACTION_APPLICATION_PASSED)
+							.putExtra(
+									EXTRA_PACKAGE_NAME, getIntent().getStringExtra(BlockedPackageName)));
+				finish();*/
+				
 			} else {
 				Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",
 						Toast.LENGTH_SHORT).show();
 			}
-			cursor.close();
 		} catch (SQLException ex) {
 			Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",
 					Toast.LENGTH_SHORT).show();
 		}
-	
 		db.close();
 	}
 	@Override
@@ -61,9 +65,8 @@ public class LoginPageActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
 		ImageView image = (ImageView) findViewById(R.id.img);
-		image.setImageResource(R.drawable.image47);
+		image.setImageResource(R.drawable.image47);		
 		final Button login = (Button) findViewById(R.id.button1);
-		// final Button reg =(Button) findViewById(R.id.register);
 		editText1 = (EditText) findViewById(R.id.editText1);
 		editText2 = (EditText) findViewById(R.id.editText2);
 		{		login.setOnClickListener(new OnClickListener() {
@@ -71,7 +74,6 @@ public class LoginPageActivity extends Activity {
 					String un = editText1.getText().toString();
 					int user_length = un.length();
 					switch (user_length) {
-
 					case 0:
 						Toast.makeText(getBaseContext(), "Empty username",
 								Toast.LENGTH_SHORT).show();
@@ -81,7 +83,6 @@ public class LoginPageActivity extends Activity {
 						{
 							String pn = editText2.getText().toString();
 							int pass_length = pn.length();
-
 							switch (pass_length) {
 							case 0:
 								Toast.makeText(getBaseContext(),
@@ -89,8 +90,18 @@ public class LoginPageActivity extends Activity {
 										.show();
 								break;
 							default: {
+							//	if(ash.lastRunningPackage.equals("com.gueei.applocker")){
 								check(un, pn);
-							}
+							/* }
+								else{
+									getApplicationContext().sendBroadcast(
+											new Intent()
+												.setAction(ACTION_APPLICATION_PASSED)
+												.putExtra(
+														EXTRA_PACKAGE_NAME, getIntent().getStringExtra(BlockedPackageName)));
+									finish();
+								}*/
+									}
 							}
 						}
 						break;
@@ -101,7 +112,6 @@ public class LoginPageActivity extends Activity {
 		}
 	}
 	@Override
-
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			finishActivity(0);
