@@ -23,8 +23,7 @@ public class LockScreenActivity extends Activity {
 	    super.onCreate(savedInstanceState);
 	    Wallpaper.set(WallpaperManager.getInstance(this).getFastDrawable());
 	    Binder.setAndBindContentView(this, R.layout.lockscreen, this);
-	}
-	
+	}	
 	public final Observable<Drawable> Wallpaper = new Observable<Drawable>(Drawable.class);
 	public final Command Number = new Command(){
 		@Override
@@ -33,8 +32,7 @@ public class LockScreenActivity extends Activity {
 			Integer number = (Integer)args[0];
 			Password.set(Password.get() + number);
 		}
-	};
-	
+	};	
 	public final Command Clear = new Command(){
 		@Override
 		public void Invoke(View view, Object... args) {
@@ -54,23 +52,17 @@ public class LockScreenActivity extends Activity {
 		}
 	};
 	public final BooleanObservable Passed = new BooleanObservable(false);
-
 	private void test_passed() {
 		this.sendBroadcast(
-				new Intent()
-					.setAction(ACTION_APPLICATION_PASSED)
-					.putExtra(
-							EXTRA_PACKAGE_NAME, getIntent().getStringExtra(BlockedPackageName)));
+				new Intent().setAction(ACTION_APPLICATION_PASSED)
+					.putExtra(EXTRA_PACKAGE_NAME, getIntent().getStringExtra(BlockedPackageName)));
 		finish();
-	}
-    
+	}    
     public boolean verifyPassword(){
     	if (Password.get() == null) return false;
     	return Password.get().equals(AppLockerPreference.getInstance(this).getPassword());
-    }
-    
+    }    
     public final StringObservable Password = new StringObservable();
-
     @Override
 	public void onBackPressed() {
     	Intent intent = new Intent();

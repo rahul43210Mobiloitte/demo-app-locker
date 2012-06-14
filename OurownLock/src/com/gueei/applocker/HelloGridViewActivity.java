@@ -48,6 +48,7 @@ public class HelloGridViewActivity extends Activity {
 		Cursor cursor = db.getAllRows("loginTable", condition);
 		String id = cursor.getString(cursor.getColumnIndex("u_name"));
 
+		cursor.close();
 		if (id.length() == 0) {
 			alertDialog.setTitle("Long Click the Images ");
 			alertDialog.setMessage("Select and Remember");
@@ -60,7 +61,6 @@ public class HelloGridViewActivity extends Activity {
 			});
 			alertDialog.setIcon(R.drawable.enter);
 			alertDialog.show();
-
 			done.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View v) {
@@ -223,7 +223,8 @@ public class HelloGridViewActivity extends Activity {
 							.getColumnIndex("seventh_img"));
 					int eight_img = cursor.getInt(cursor
 							.getColumnIndex("eight_img"));
-					db.getAllRows("Image", condition);
+					//db.getAllRows("Image", condition);
+					cursor.close();
 					while (--lstClickCount >= 0) {
 						int seq = (7 - lstClickCount);
 
@@ -258,7 +259,7 @@ public class HelloGridViewActivity extends Activity {
 					} else {wrongselection();}
 
 
-
+					db.close();
 					// TODO Auto-generated method stub
 
 				}
@@ -390,7 +391,6 @@ public class HelloGridViewActivity extends Activity {
 				}
 			});
 		}
-
 		// gridview.onTouchEvent(null);
 		gridview.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v,
@@ -406,9 +406,7 @@ public class HelloGridViewActivity extends Activity {
 				System.exit(0);
 			}
 		});
-
 	}
-
 	protected void countClick() {
 		// TODO Auto-generated method stub
 		myClickCount++;
@@ -418,5 +416,4 @@ public class HelloGridViewActivity extends Activity {
 		// TODO Auto-generated method stub
 		lstClickCount++;
 	}
-
 }
