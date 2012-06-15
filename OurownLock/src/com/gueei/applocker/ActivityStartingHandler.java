@@ -48,7 +48,7 @@ public class ActivityStartingHandler implements ActivityStartingListener {
 				lastRunningPackage = packagename;
 			}
 		}, new IntentFilter(LoginPageActivity.ACTION_APPLICATION_PASSED));
-		lockScreenActivityName = ".HelloGridViewActivity";
+		lockScreenActivityName = ".LoginPageActivity";
 	}
 	private void log() {
 		String output = "temp allowed:";

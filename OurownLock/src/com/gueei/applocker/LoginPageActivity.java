@@ -40,9 +40,19 @@ public class LoginPageActivity extends Activity {
 																// , null,
 			cursor.close();													// null,null);
 			if (cursor != null && cursor.getCount() > 0) {
+				if(ash.lastRunningPackage.equals("com.gueei.applocker")){
 				Intent intent = new Intent(getApplicationContext(),
 						AppLockerActivity.class);
 				startActivity(intent);
+				}
+				else{
+					getApplicationContext().sendBroadcast(
+							new Intent()
+								.setAction(ACTION_APPLICATION_PASSED)
+								.putExtra(
+										EXTRA_PACKAGE_NAME, getIntent().getStringExtra(BlockedPackageName)));
+					finish();
+				}
 				/*this.sendBroadcast(
 						new Intent()
 							.setAction(ACTION_APPLICATION_PASSED)
@@ -90,7 +100,7 @@ public class LoginPageActivity extends Activity {
 										.show();
 								break;
 							default: {
-							//	if(ash.lastRunningPackage.equals("com.gueei.applocker")){
+							//if(ash.lastRunningPackage.equals("com.gueei.applocker")){
 								check(un, pn);
 							/* }
 								else{
