@@ -391,7 +391,6 @@ public class HelloGridViewActivity extends Activity {
 				}
 			});
 		}
-		// gridview.onTouchEvent(null);
 		gridview.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
@@ -413,7 +412,6 @@ public class HelloGridViewActivity extends Activity {
 	}
 
 	protected void lstcountClick() {
-		// TODO Auto-generated method stub
 		lstClickCount++;
 	}
 }
