@@ -1,7 +1,6 @@
 package com.gueei.applocker;
 
 import com.gueei.applocker.R;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentValues;
@@ -30,7 +29,6 @@ public class HelloGridViewActivity extends Activity {
 	int lstClickCount = 0;
 	DBAdapter db = new DBAdapter(this);
 	private String pack;
-
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +36,6 @@ public class HelloGridViewActivity extends Activity {
 		setContentView(R.layout.main2);
 		db.open();
 		db.createTables();
-	
 		Button done = (Button) findViewById(R.id.done);
 		Button cancel = (Button) findViewById(R.id.cancel);
 		GridView gridview = (GridView) findViewById(R.id.gridview);
@@ -47,7 +44,6 @@ public class HelloGridViewActivity extends Activity {
 		String condition = "_Id = '1'";
 		Cursor cursor = db.getAllRows("loginTable", condition);
 		String id = cursor.getString(cursor.getColumnIndex("u_name"));
-
 		cursor.close();
 		if (id.length() == 0) {
 			alertDialog.setTitle("Long Click the Images ");
@@ -63,7 +59,6 @@ public class HelloGridViewActivity extends Activity {
 			done.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View v) {
-
 					ContentValues newValues = new ContentValues();
 					newValues.put("first_img", a[0]);
 					newValues.put("second_img", a[1]);
@@ -73,19 +68,13 @@ public class HelloGridViewActivity extends Activity {
 					newValues.put("sixth_img", a[5]);
 					newValues.put("seventh_img", a[6]);
 					newValues.put("eight_img", a[7]);
-
 					db.updateAllRow("Image", newValues, "img_Id= 1");
-
-					
 					alertDialog.setTitle("GOOD ");
 					alertDialog.setMessage(" Image Selected");
 					alertDialog.setButton("OK",
 							new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int which) {
-							Intent intent = new Intent(
-									getBaseContext(),
-									RegistrationActivity.class);
+						public void onClick(DialogInterface dialog,int which) {
+							Intent intent = new Intent(getBaseContext(),RegistrationActivity.class);
 							startActivity(intent);
 						}
 					});
@@ -99,28 +88,16 @@ public class HelloGridViewActivity extends Activity {
 						int arg2, long arg3) {
 					if (myClickCount < 8) {
 						a[myClickCount] = arg2;
-						Toast.makeText(
-								HelloGridViewActivity.this,
-								"Sequence No." + (myClickCount + 1)
-								+ " Image No. " + a[myClickCount], 0)
-								.show();
+						Toast.makeText(HelloGridViewActivity.this,"Sequence No." + (myClickCount + 1)+ " Image No. " + a[myClickCount], 0).show();
 						if (myClickCount <= 7) {
-
 							if (myClickCount == 7) {
 								while (--myClickCount >= 0) {
 									int seq = (7 - myClickCount);
-									Toast.makeText(
-											getApplicationContext(),
-											" YOU HAVE SELECTED IMAGE No. "
-													+ a[seq], 0).show();
-								}
+									Toast.makeText(getApplicationContext()," YOU HAVE SELECTED IMAGE No. "+ a[seq], 0).show();								}
 								String condition = "_Id = '1'";
-								Cursor cursor = db.getAllRows("loginTable",
-										condition);
-								String id = cursor.getString(cursor
-										.getColumnIndex("u_name"));
+								Cursor cursor = db.getAllRows("loginTable",	condition);
+								String id = cursor.getString(cursor	.getColumnIndex("u_name"));
 								if (id.length() == 0) {
-
 									ContentValues newValues = new ContentValues();
 									newValues.put("first_img", a[0]);
 									newValues.put("second_img", a[1]);
@@ -131,21 +108,13 @@ public class HelloGridViewActivity extends Activity {
 									newValues.put("seventh_img", a[6]);
 									newValues.put("eight_img", a[7]);
 
-									db.updateAllRow("Image", newValues,
-											"img_Id= 1");
+									db.updateAllRow("Image", newValues,"img_Id= 1");
 
 									alertDialog.setTitle("GOOD ");
 									alertDialog.setMessage(" Image Selected");
-									alertDialog
-									.setButton(
-											"OK",
-											new DialogInterface.OnClickListener() {
-												public void onClick(
-														DialogInterface dialog,
-														int which) {
-													Intent intent = new Intent(
-															getBaseContext(),
-															RegistrationActivity.class);
+									alertDialog.setButton("OK",	new DialogInterface.OnClickListener() {
+												public void onClick(DialogInterface dialog,	int which) {
+													Intent intent = new Intent(getBaseContext(),RegistrationActivity.class);
 													startActivity(intent);
 												}
 											});
@@ -158,20 +127,16 @@ public class HelloGridViewActivity extends Activity {
 								 * LoginPageActivity.class);
 								 * startActivity(intent); }
 								 */
-
 							}
 							countClick();
 						}
 					} else {
 						Toast.makeText(getApplicationContext(),
 								" Image Total " + myClickCount, 0).show();
-						alertDialog
-						.setTitle("Select atleast 3 and atmost 8 images ");
+						alertDialog.setTitle("Select atleast 3 and atmost 8 images ");
 						alertDialog.setMessage("LIMIT REACHED");
-						alertDialog.setButton("OK",
-								new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int which) {
+						alertDialog.setButton("OK",	new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,int which) {
 							}
 						});
 						alertDialog.setIcon(R.drawable.right);
@@ -187,41 +152,27 @@ public class HelloGridViewActivity extends Activity {
 			alertDialog.setMessage("Start from the First then till last");
 			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
-					Toast.makeText(getApplicationContext(), "Start Selection",
-							0).show();
-
+					Toast.makeText(getApplicationContext(), "Start Selection",0).show();
 				}
 			});
 			alertDialog.setIcon(R.drawable.enter);
 			alertDialog.show();
-
 			done.setOnClickListener(new OnClickListener() {
-
 				public void onClick(View v) {
-
 					String condition = "img_Id = '1'";
 					Cursor cursor = db.getAllRows("Image", condition);
-					int first_img = cursor.getInt(cursor
-							.getColumnIndex("first_img"));
-					int second_img = cursor.getInt(cursor
-							.getColumnIndex("second_img"));
-					int third_img = cursor.getInt(cursor
-							.getColumnIndex("third_img"));
-					int fourth_img = cursor.getInt(cursor
-							.getColumnIndex("fourth_img"));
-					int fifth_img = cursor.getInt(cursor
-							.getColumnIndex("fifth_img"));
-					int sixth_img = cursor.getInt(cursor
-							.getColumnIndex("sixth_img"));
-					int seventh_img = cursor.getInt(cursor
-							.getColumnIndex("seventh_img"));
-					int eight_img = cursor.getInt(cursor
-							.getColumnIndex("eight_img"));
+					int first_img = cursor.getInt(cursor.getColumnIndex("first_img"));
+					int second_img = cursor.getInt(cursor.getColumnIndex("second_img"));
+					int third_img = cursor.getInt(cursor.getColumnIndex("third_img"));
+					int fourth_img = cursor.getInt(cursor.getColumnIndex("fourth_img"));
+					int fifth_img = cursor.getInt(cursor.getColumnIndex("fifth_img"));
+					int sixth_img = cursor.getInt(cursor.getColumnIndex("sixth_img"));
+					int seventh_img = cursor.getInt(cursor.getColumnIndex("seventh_img"));
+					int eight_img = cursor.getInt(cursor.getColumnIndex("eight_img"));
 					// db.getAllRows("Image", condition);
 					cursor.close();
 					while (--lstClickCount >= 0) {
 						int seq = (7 - lstClickCount);
-
 					}
 					if (a[0] == first_img) {
 						if (a[1] == second_img) {
@@ -231,17 +182,12 @@ public class HelloGridViewActivity extends Activity {
 										if (a[5] == sixth_img) {
 											if (a[6] == seventh_img) {
 												if (a[7] == eight_img) {
-													Intent intent = new Intent(
-															getBaseContext(),
-															LoginPageActivity.class);
+													Intent intent = new Intent(getBaseContext(),LoginPageActivity.class);
 													intent.putExtra(LoginPageActivity.BlockedActivityName, BlockedPackageName);
-
 													startActivity(intent);
-
 												} else {
 													wrongselection();
 												}
-
 											} else {
 												wrongselection();
 											}
@@ -261,30 +207,21 @@ public class HelloGridViewActivity extends Activity {
 							} else {
 								wrongselection();
 							}
-
 						} else {
 							wrongselection();
 						}
-
 					} else {
 						wrongselection();
 					}
-
 					db.close();
-
 				}
-
 				private void wrongselection() {
-					
 					alertDialog.setTitle("STOP ");
 					alertDialog.setMessage("Wrong Image Selected");
 					alertDialog.setButton("OK",
 							new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int which) {
-							Intent intent = new Intent(
-									getApplicationContext(),
-									HelloGridViewActivity.class);
+						public void onClick(DialogInterface dialog,	int which) {
+							Intent intent = new Intent(getApplicationContext(),	HelloGridViewActivity.class);
 							finish();
 							startActivity(intent);
 
@@ -295,37 +232,23 @@ public class HelloGridViewActivity extends Activity {
 				}
 			});
 			gridview.setOnItemLongClickListener(new OnItemLongClickListener() {
-				public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
-						int arg2, long arg3) {
+				public boolean onItemLongClick(AdapterView<?> arg0, View arg1,int arg2, long arg3) {
 					if (lstClickCount < 8) {
 						a[lstClickCount] = arg2;
-						Toast.makeText(
-								HelloGridViewActivity.this,
-								"Sequence No." + (lstClickCount + 1)
-								+ " Image No. " + a[lstClickCount], 0)
-								.show();
+						Toast.makeText(HelloGridViewActivity.this,"Sequence No." + (lstClickCount + 1)+ " Image No. " + a[lstClickCount], 0).show();
 						if (lstClickCount <= 7) {
 							if (lstClickCount == 7) {
 
 								String condition = "img_Id = '1'";
-								Cursor cursor = db.getAllRows("Image",
-										condition);
-								int first_img = cursor.getInt(cursor
-										.getColumnIndex("first_img"));
-								int second_img = cursor.getInt(cursor
-										.getColumnIndex("second_img"));
-								int third_img = cursor.getInt(cursor
-										.getColumnIndex("third_img"));
-								int fourth_img = cursor.getInt(cursor
-										.getColumnIndex("fourth_img"));
-								int fifth_img = cursor.getInt(cursor
-										.getColumnIndex("fifth_img"));
-								int sixth_img = cursor.getInt(cursor
-										.getColumnIndex("sixth_img"));
-								int seventh_img = cursor.getInt(cursor
-										.getColumnIndex("seventh_img"));
-								int eight_img = cursor.getInt(cursor
-										.getColumnIndex("eight_img"));
+								Cursor cursor = db.getAllRows("Image",condition);
+								int first_img = cursor.getInt(cursor.getColumnIndex("first_img"));
+								int second_img = cursor.getInt(cursor.getColumnIndex("second_img"));
+								int third_img = cursor.getInt(cursor.getColumnIndex("third_img"));
+								int fourth_img = cursor.getInt(cursor.getColumnIndex("fourth_img"));
+								int fifth_img = cursor.getInt(cursor.getColumnIndex("fifth_img"));
+								int sixth_img = cursor.getInt(cursor.getColumnIndex("sixth_img"));
+								int seventh_img = cursor.getInt(cursor.getColumnIndex("seventh_img"));
+								int eight_img = cursor.getInt(cursor.getColumnIndex("eight_img"));
 								db.getAllRows("Image", condition);
 								while (--lstClickCount >= 0) {
 									int seq = (7 - lstClickCount);
@@ -339,9 +262,7 @@ public class HelloGridViewActivity extends Activity {
 													if (a[5] == sixth_img) {
 														if (a[6] == seventh_img) {
 															if (a[7] == eight_img) {
-																Intent intent = new Intent(
-																		getBaseContext(),
-																		LoginPageActivity.class);
+																Intent intent = new Intent(getBaseContext(),LoginPageActivity.class);
 																intent.putExtra(LoginPageActivity.BlockedActivityName, BlockedPackageName);
 
 																startActivity(intent);
@@ -392,11 +313,8 @@ public class HelloGridViewActivity extends Activity {
 					alertDialog.setMessage("Wrong Image Selected");
 					alertDialog.setButton("OK",
 							new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int which) {
-							Intent intent = new Intent(
-									getApplicationContext(),
-									HelloGridViewActivity.class);
+						public void onClick(DialogInterface dialog,	int which) {
+							Intent intent = new Intent(getApplicationContext(),HelloGridViewActivity.class);
 							finish();
 							startActivity(intent);
 
@@ -409,10 +327,8 @@ public class HelloGridViewActivity extends Activity {
 			});
 		}
 		gridview.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View v,
-					int position, long id) {
-				Toast.makeText(HelloGridViewActivity.this, "" + position, 0)
-				.show();
+			public void onItemClick(AdapterView<?> parent, View v,int position, long id) {
+				Toast.makeText(HelloGridViewActivity.this, "" + position, 0).show();
 			}
 		});
 		cancel.setOnClickListener(new OnClickListener() {
@@ -424,7 +340,7 @@ public class HelloGridViewActivity extends Activity {
 	}
 
 	protected void countClick() {
-		
+
 		myClickCount++;
 	}
 
