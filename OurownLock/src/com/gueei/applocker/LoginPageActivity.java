@@ -30,32 +30,22 @@ public class LoginPageActivity extends Activity {
 			String value = "**Insert Correct Credentials**";
 			db.open();
 			String id = "0";
-			String whereCheck = "u_name = '" + un + "' AND p_word = '" + pw
-					+ "'";
+			String whereCheck = "u_name = '" + un + "' AND p_word = '" + pw	+ "'";
 			Cursor cursor = db.getRow(DATABASE_TABLE, un, pw);
 			cursor.close();
 			if (cursor != null && cursor.getCount() > 0) {
-				/*if (getApplicationContext().getPackageName().equals(
-						"com.gueei.applocker")) {
-				*/	Intent intent = new Intent(getApplicationContext(),
-							AppLockerActivity.class);
+				if (getApplicationContext().getPackageName().equals("com.gueei.applocker")) {
+					Intent intent = new Intent(getApplicationContext(),AppLockerActivity.class);
 					startActivity(intent);
-				/*} else {
-					getApplicationContext().sendBroadcast(
-							new Intent().setAction(ACTION_APPLICATION_PASSED)
-									.putExtra(
-											EXTRA_PACKAGE_NAME,
-											getIntent().getStringExtra(
-													BlockedPackageName)));
+				} else {
+					getApplicationContext().sendBroadcast(new Intent().setAction(ACTION_APPLICATION_PASSED).putExtra(EXTRA_PACKAGE_NAME,getIntent().getStringExtra(BlockedPackageName)));
 					finish();
-				}*/
+				}
 			} else {
-				Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",
-						Toast.LENGTH_SHORT).show();
+				Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",Toast.LENGTH_SHORT).show();
 			}
 		} catch (SQLException ex) {
-			Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",Toast.LENGTH_SHORT).show();
 		}
 		db.close();
 	}
@@ -73,20 +63,14 @@ public class LoginPageActivity extends Activity {
 				String un = editText1.getText().toString();
 				int user_length = un.length();
 				switch (user_length) {
-				case 0:
-					Toast.makeText(getBaseContext(), "Empty username",
-							Toast.LENGTH_SHORT).show();
-					break;
-
+				case 0:	Toast.makeText(getBaseContext(), "Empty username",Toast.LENGTH_SHORT).show();
+				break;
 				default: {
 					{
 						String pn = editText2.getText().toString();
 						int pass_length = pn.length();
 						switch (pass_length) {
-						case 0:
-							Toast.makeText(getBaseContext(),
-									"  Enter Password", Toast.LENGTH_SHORT)
-									.show();
+						case 0:	Toast.makeText(getBaseContext(),"  Enter Password", Toast.LENGTH_SHORT).show();
 							break;
 						default: {
 							check(un, pn);
@@ -102,7 +86,7 @@ public class LoginPageActivity extends Activity {
 	public void onBackPressed() {
 		Intent intent = new Intent();
 		intent.setAction(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME)
-				.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(intent);
 		finish();
 	}
