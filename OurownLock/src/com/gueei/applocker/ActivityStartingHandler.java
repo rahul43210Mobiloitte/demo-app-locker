@@ -29,7 +29,7 @@ public class ActivityStartingHandler implements ActivityStartingListener {
 			@Override
 			public void onReceive(Context context, Intent intent) {
 				String packagename = intent
-						.getStringExtra(LockScreenActivity.EXTRA_PACKAGE_NAME);
+						.getStringExtra(LoginPageActivity.EXTRA_PACKAGE_NAME);
 				if (AppLockerPreference.getInstance(mContext)
 						.getRelockTimeout() > 0) {
 					if (tempAllowedPackages.containsKey(packagename)) {
@@ -98,8 +98,6 @@ public class ActivityStartingHandler implements ActivityStartingListener {
 				}
 			}
 			lastRunningPackage = packageName;
-
-			Toast.makeText(mContext, lastRunningPackage, 0).show();
 		}
 	}
 	private void blockActivity(String packageName, String activityName) {

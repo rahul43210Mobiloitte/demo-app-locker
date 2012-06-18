@@ -29,6 +29,7 @@ public class HelloGridViewActivity extends Activity {
 	int myClickCount = 0;
 	int lstClickCount = 0;
 	DBAdapter db = new DBAdapter(this);
+	private String pack;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -37,12 +38,11 @@ public class HelloGridViewActivity extends Activity {
 		setContentView(R.layout.main2);
 		db.open();
 		db.createTables();
-
+	
 		Button done = (Button) findViewById(R.id.done);
 		Button cancel = (Button) findViewById(R.id.cancel);
 		GridView gridview = (GridView) findViewById(R.id.gridview);
 		gridview.setAdapter(new ImageAdapter1(this));
-
 		final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 		String condition = "_Id = '1'";
 		Cursor cursor = db.getAllRows("loginTable", condition);
@@ -56,7 +56,6 @@ public class HelloGridViewActivity extends Activity {
 				public void onClick(DialogInterface dialog, int which) {
 					Toast.makeText(getApplicationContext(), "Start Selection",
 							0).show();
-
 				}
 			});
 			alertDialog.setIcon(R.drawable.enter);
@@ -77,26 +76,21 @@ public class HelloGridViewActivity extends Activity {
 
 					db.updateAllRow("Image", newValues, "img_Id= 1");
 
-
-					// TODO Auto-generated method stub
-					alertDialog
-					.setTitle("GOOD ");
-					alertDialog
-					.setMessage(" Image Selected");
-					alertDialog
-					.setButton(
-							"OK",
+					
+					alertDialog.setTitle("GOOD ");
+					alertDialog.setMessage(" Image Selected");
+					alertDialog.setButton("OK",
 							new DialogInterface.OnClickListener() {
-								public void onClick(
-										DialogInterface dialog,
-										int which) {Intent intent = new Intent(getBaseContext(),
-												RegistrationActivity.class);
-										startActivity(intent);}
-							});
-					alertDialog
-					.setIcon(R.drawable.correct);
+						public void onClick(DialogInterface dialog,
+								int which) {
+							Intent intent = new Intent(
+									getBaseContext(),
+									RegistrationActivity.class);
+							startActivity(intent);
+						}
+					});
+					alertDialog.setIcon(R.drawable.correct);
 					alertDialog.show();
-
 
 				}
 			});
@@ -140,22 +134,22 @@ public class HelloGridViewActivity extends Activity {
 									db.updateAllRow("Image", newValues,
 											"img_Id= 1");
 
-									alertDialog
-									.setTitle("GOOD ");
-									alertDialog
-									.setMessage(" Image Selected");
+									alertDialog.setTitle("GOOD ");
+									alertDialog.setMessage(" Image Selected");
 									alertDialog
 									.setButton(
 											"OK",
 											new DialogInterface.OnClickListener() {
 												public void onClick(
 														DialogInterface dialog,
-														int which) {Intent intent = new Intent(getBaseContext(),
-																RegistrationActivity.class);
-														startActivity(intent);}
+														int which) {
+													Intent intent = new Intent(
+															getBaseContext(),
+															RegistrationActivity.class);
+													startActivity(intent);
+												}
 											});
-									alertDialog
-									.setIcon(R.drawable.correct);
+									alertDialog.setIcon(R.drawable.correct);
 									alertDialog.show();
 								}
 								/*
@@ -223,7 +217,7 @@ public class HelloGridViewActivity extends Activity {
 							.getColumnIndex("seventh_img"));
 					int eight_img = cursor.getInt(cursor
 							.getColumnIndex("eight_img"));
-					//db.getAllRows("Image", condition);
+					// db.getAllRows("Image", condition);
 					cursor.close();
 					while (--lstClickCount >= 0) {
 						int seq = (7 - lstClickCount);
@@ -240,51 +234,63 @@ public class HelloGridViewActivity extends Activity {
 													Intent intent = new Intent(
 															getBaseContext(),
 															LoginPageActivity.class);
+													intent.putExtra(LoginPageActivity.BlockedActivityName, BlockedPackageName);
+
 													startActivity(intent);
 
-												} else {wrongselection();}
+												} else {
+													wrongselection();
+												}
 
-											} else {wrongselection();}
+											} else {
+												wrongselection();
+											}
 
-										} else {wrongselection();}
+										} else {
+											wrongselection();
+										}
 
-									} else {wrongselection();}
+									} else {
+										wrongselection();
+									}
 
-								} else {wrongselection();}
+								} else {
+									wrongselection();
+								}
 
-							} else {wrongselection();}
+							} else {
+								wrongselection();
+							}
 
-						} else {wrongselection();}
+						} else {
+							wrongselection();
+						}
 
-					} else {wrongselection();}
-
+					} else {
+						wrongselection();
+					}
 
 					db.close();
-					// TODO Auto-generated method stub
 
 				}
 
 				private void wrongselection() {
-					// TODO Auto-generated method stub
-					alertDialog
-					.setTitle("STOP ");
-					alertDialog
-					.setMessage("Wrong Image Selected");
-					alertDialog
-					.setButton(
-							"OK",
+					
+					alertDialog.setTitle("STOP ");
+					alertDialog.setMessage("Wrong Image Selected");
+					alertDialog.setButton("OK",
 							new DialogInterface.OnClickListener() {
-								public void onClick(
-										DialogInterface dialog,
-										int which) {
-									Intent intent = new Intent(getApplicationContext(),HelloGridViewActivity.class);
-									finish();
-									startActivity(intent);
+						public void onClick(DialogInterface dialog,
+								int which) {
+							Intent intent = new Intent(
+									getApplicationContext(),
+									HelloGridViewActivity.class);
+							finish();
+							startActivity(intent);
 
-								}
-							});
-					alertDialog
-					.setIcon(R.drawable.wrong);
+						}
+					});
+					alertDialog.setIcon(R.drawable.wrong);
 					alertDialog.show();
 				}
 			});
@@ -336,27 +342,45 @@ public class HelloGridViewActivity extends Activity {
 																Intent intent = new Intent(
 																		getBaseContext(),
 																		LoginPageActivity.class);
+																intent.putExtra(LoginPageActivity.BlockedActivityName, BlockedPackageName);
+
 																startActivity(intent);
 
-															} else {wrongselection();}
+															} else {
+																wrongselection();
+															}
 
-														} else {wrongselection();}
+														} else {
+															wrongselection();
+														}
 
-													} else {wrongselection();}
+													} else {
+														wrongselection();
+													}
 
-												} else {wrongselection();}
+												} else {
+													wrongselection();
+												}
 
-											} else {wrongselection();}
+											} else {
+												wrongselection();
+											}
 
-										} else {wrongselection();}
+										} else {
+											wrongselection();
+										}
 
-									} else {wrongselection();}
+									} else {
+										wrongselection();
+									}
 
-								} else {wrongselection();}
+								} else {
+									wrongselection();
+								}
 								cursor.close();
 							}
 							lstcountClick();
-							
+
 						}
 					}
 
@@ -364,28 +388,21 @@ public class HelloGridViewActivity extends Activity {
 				}
 
 				private void wrongselection() {
-					// TODO Auto-generated method stub
-
-					// TODO Auto-generated method stub
-					alertDialog
-					.setTitle("STOP ");
-					alertDialog
-					.setMessage("Wrong Image Selected");
-					alertDialog
-					.setButton(
-							"OK",
+					alertDialog.setTitle("STOP ");
+					alertDialog.setMessage("Wrong Image Selected");
+					alertDialog.setButton("OK",
 							new DialogInterface.OnClickListener() {
-								public void onClick(
-										DialogInterface dialog,
-										int which) {
-									Intent intent = new Intent(getApplicationContext(),HelloGridViewActivity.class);
-									finish();
-									startActivity(intent);
+						public void onClick(DialogInterface dialog,
+								int which) {
+							Intent intent = new Intent(
+									getApplicationContext(),
+									HelloGridViewActivity.class);
+							finish();
+							startActivity(intent);
 
-								}
-							});
-					alertDialog
-					.setIcon(R.drawable.wrong);
+						}
+					});
+					alertDialog.setIcon(R.drawable.wrong);
 					alertDialog.show();
 
 				}
@@ -401,17 +418,25 @@ public class HelloGridViewActivity extends Activity {
 		cancel.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				System.exit(0);
 			}
 		});
 	}
+
 	protected void countClick() {
-		// TODO Auto-generated method stub
+		
 		myClickCount++;
 	}
 
 	protected void lstcountClick() {
 		lstClickCount++;
+	}
+
+	public String getPack() {
+		return pack;
+	}
+
+	public void setPack(String pack) {
+		this.pack = pack;
 	}
 }
