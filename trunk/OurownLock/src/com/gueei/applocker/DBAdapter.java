@@ -33,7 +33,7 @@ public class DBAdapter
 
 	private static final String TABLE_CREATE[] =
 		{"CREATE TABLE IF NOT EXISTS loginTable (_Id INTEGER NOT NULL PRIMARY KEY autoincrement,  r_name nvarchar(50),u_name nvarchar(50),p_word nvarchar(50));",
-		"CREATE TABLE IF NOT EXISTS Image ([img_Id]  int NOT NULL PRIMARY KEY,  [first_img] int NOT NULL,  [second_img]  int NOT NULL,  [third_img]  int NOT NULL,  [fourth_img]  int,  [fifth_img]  int,  [sixth_img]  int,  [seventh_img]  int,  [eight_img]  int );" ,
+		"CREATE TABLE IF NOT EXISTS Image ([img_Id]  int NOT NULL PRIMARY KEY,  [first_img] int ,  [second_img]  int ,  [third_img]  int ,  [fourth_img]  int,  [fifth_img]  int,  [sixth_img]  int,  [seventh_img]  int,  [eight_img]  int );" ,
 		"CREATE TABLE IF NOT EXISTS Icon ([icon_Id]  int NOT NULL PRIMARY KEY,  [red_img] int NOT NULL,  [green_img]  int NOT NULL);"
 		};
 

@@ -50,8 +50,7 @@ public class HelloGridViewActivity extends Activity {
 			alertDialog.setMessage("Select and Remember");
 			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
-					Toast.makeText(getApplicationContext(), "Start Selection",
-							0).show();
+					Toast.makeText(getApplicationContext(), "Start Selection",0).show();
 				}
 			});
 			alertDialog.setIcon(R.drawable.enter);
