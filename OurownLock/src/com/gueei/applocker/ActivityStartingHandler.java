@@ -22,27 +22,20 @@ public class ActivityStartingHandler implements ActivityStartingListener {
 	public ActivityStartingHandler(Context context) {
 		mContext = context;
 		handler = new Handler();
-		mAm = (ActivityManager) mContext
-				.getSystemService(Context.ACTIVITY_SERVICE);
+		mAm = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
 		lastRunningPackage = getRunningPackage();
 		context.registerReceiver(new BroadcastReceiver() {
 			@Override
 			public void onReceive(Context context, Intent intent) {
-				String packagename = intent
-						.getStringExtra(LoginPageActivity.EXTRA_PACKAGE_NAME);
-				if (AppLockerPreference.getInstance(mContext)
-						.getRelockTimeout() > 0) {
+				String packagename = intent.getStringExtra(LoginPageActivity.EXTRA_PACKAGE_NAME);
+				if (AppLockerPreference.getInstance(mContext).getRelockTimeout() > 0) {
 					if (tempAllowedPackages.containsKey(packagename)) {
-						Log.d("Detector", "Extending timeout for: "
-								+ packagename);
-						handler.removeCallbacks(tempAllowedPackages
-								.get(packagename));
+						Log.d("Detector", "Extending timeout for: "+ packagename);
+						handler.removeCallbacks(tempAllowedPackages.get(packagename));
 					}
 					Runnable runnable = new RemoveFromTempRunnable(packagename);
 					tempAllowedPackages.put(packagename, runnable);
-					handler.postDelayed(runnable,
-							AppLockerPreference.getInstance(mContext)
-							.getRelockTimeout() * 1000 * 60);
+					handler.postDelayed(runnable,AppLockerPreference.getInstance(mContext).getRelockTimeout() * 1000 * 60);
 					log();
 				}
 				lastRunningPackage = packagename;

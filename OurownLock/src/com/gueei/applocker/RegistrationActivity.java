@@ -69,8 +69,6 @@ public class RegistrationActivity extends Activity {
 							Intent intent=new Intent(getApplicationContext(), LoginPageActivity.class);
 							intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 							startActivity(intent);
-
-
 						}
 						catch(SQLiteException ex){
 							Toast.makeText(getApplicationContext(), "couldn't be updated",5).show(); 
@@ -92,12 +90,12 @@ public class RegistrationActivity extends Activity {
 			}
 		});
 
-
+		
 		}
+	mydb.close();
 	}
 
-	private void insertEntry(){
-	
+	private void insertEntry(){	
 		ContentValues newValues = new ContentValues();		
 		newValues.put(ID, j);
 		newValues.put(NAME, name_ed.getText().toString());

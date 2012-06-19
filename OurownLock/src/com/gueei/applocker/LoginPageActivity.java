@@ -34,6 +34,9 @@ public class LoginPageActivity extends Activity {
 			Cursor cursor = db.getRow(DATABASE_TABLE, un, pw);
 			cursor.close();
 			if (cursor != null && cursor.getCount() > 0) {
+				this.sendBroadcast(new Intent().setAction(ACTION_APPLICATION_PASSED).putExtra(EXTRA_PACKAGE_NAME, getIntent().getStringExtra(BlockedPackageName)));
+				finish();				
+				/*
 				if (getApplicationContext().getPackageName().equals("com.gueei.applocker")) {
 					Intent intent = new Intent(getApplicationContext(),AppLockerActivity.class);
 					startActivity(intent);
@@ -41,7 +44,7 @@ public class LoginPageActivity extends Activity {
 					getApplicationContext().sendBroadcast(new Intent().setAction(ACTION_APPLICATION_PASSED).putExtra(EXTRA_PACKAGE_NAME,getIntent().getStringExtra(BlockedPackageName)));
 					finish();
 				}
-			} else {
+			*/} else {
 				Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",Toast.LENGTH_SHORT).show();
 			}
 		} catch (SQLException ex) {
