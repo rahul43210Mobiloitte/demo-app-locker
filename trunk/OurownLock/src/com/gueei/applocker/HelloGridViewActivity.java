@@ -191,6 +191,8 @@ public class HelloGridViewActivity extends Activity {
 											if (a[6] == seventh_img) {
 												if (a[7] == eight_img) {
 													Intent intent  =new Intent(getBaseContext(), LoginPageActivity.class);
+													intent.putExtra(LockScreenActivity.BlockedActivityName, BlockedActivityName)
+													.putExtra(LockScreenActivity.BlockedPackageName, BlockedPackageName);
 													startActivity(intent);
 													/*Intent lockIntent = new Intent(getBaseContext(), LockScreenActivity.class);
 												lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -315,13 +317,10 @@ public class HelloGridViewActivity extends Activity {
 								cursor.close();
 							}
 							lstcountClick();
-
 						}
 					}
-
 					return true;
 				}
-
 				private void wrongselection() {
 					alertDialog.setTitle("STOP ");
 					alertDialog.setMessage("Wrong Image Selected");
