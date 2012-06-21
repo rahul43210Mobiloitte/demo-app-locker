@@ -35,7 +35,7 @@ public class LoginPageActivity extends Activity {
 			String id = "0";
 			String whereCheck = "u_name = '" + un + "' AND p_word = '" + pw	+ "'";
 			Cursor cursor = db.getRow(DATABASE_TABLE, un, pw);
-			cursor.close();
+			
 			if (cursor != null && cursor.getCount() > 0) {
 				Passed.set(true);
 				this.sendBroadcast(new Intent().setAction(ACTION_APPLICATION_PASSED).putExtra(EXTRA_PACKAGE_NAME, getIntent().getStringExtra(BlockedPackageName)));
@@ -51,6 +51,7 @@ public class LoginPageActivity extends Activity {
 			*/} else {
 				Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",Toast.LENGTH_SHORT).show();
 			}
+			cursor.close();
 		} catch (SQLException ex) {
 			Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",Toast.LENGTH_SHORT).show();
 		}

@@ -98,7 +98,7 @@ public class ActivityStartingHandler implements ActivityStartingListener {
 		// Intent lockIntent = new Intent(mContext, LockScreenActivity.class);
 		Intent lockIntent = new Intent(mContext, HelloGridViewActivity.class);
 		lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		lockIntent.putExtra(LoginPageActivity.BlockedActivityName,activityName).putExtra(LoginPageActivity.BlockedPackageName, packageName);
+		lockIntent.putExtra(HelloGridViewActivity.BlockedActivityName,activityName).putExtra(HelloGridViewActivity.BlockedPackageName, packageName);
 		mContext.startActivity(lockIntent);
 	}
 }
