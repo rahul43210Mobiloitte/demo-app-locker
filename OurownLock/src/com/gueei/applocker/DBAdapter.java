@@ -40,7 +40,7 @@ public class DBAdapter
 	private static final String TABLE_INSERT[] =
 		{ 
 		
-		"INSERT OR IGNORE INTO loginTable VALUES(1,'','','')",
+		"INSERT OR IGNORE INTO loginTable VALUES(1,'ADMIN','ADMIN','1234')",
 		"INSERT OR IGNORE INTO Image VALUES(1,'','','','','','','','')",
 		"INSERT OR IGNORE INTO Icon VALUES(1,'0','1')"
 		

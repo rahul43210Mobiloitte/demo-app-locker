@@ -42,10 +42,10 @@ public class HelloGridViewActivity extends Activity {
 		gridview.setAdapter(new ImageAdapter1(this));
 		final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 		String condition = "_Id = '1'";
-		Cursor cursor = db.getAllRows("loginTable", condition);
-		String id = cursor.getString(cursor.getColumnIndex("u_name"));
-		cursor.close();
-		if (id.length() == 0) {
+		/*Cursor cursor = db.getAllRows("loginTable", condition);
+		String id = cursor.getString(cursor.getColumnIndex("u_name"));*/
+
+		/*if (id.length() == 0) {
 			alertDialog.setTitle("Long Click the Images ");
 			alertDialog.setMessage("Select and Remember");
 			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
@@ -120,12 +120,12 @@ public class HelloGridViewActivity extends Activity {
 									alertDialog.setIcon(R.drawable.correct);
 									alertDialog.show();
 								}
-								/*
-								 * else{ db.getAllRows("Image", condition);
-								 * Intent intent =new Intent(getBaseContext(),
-								 * LoginPageActivity.class);
-								 * startActivity(intent); }
-								 */
+
+		 * else{ db.getAllRows("Image", condition);
+		 * Intent intent =new Intent(getBaseContext(),
+		 * LoginPageActivity.class);
+		 * startActivity(intent); }
+
 							}
 							countClick();
 						}
@@ -146,7 +146,7 @@ public class HelloGridViewActivity extends Activity {
 				}
 			});
 
-		} else {
+		} else */
 			alertDialog.setTitle("Long Click the Images ");
 			alertDialog.setMessage("Start from the First then till last");
 			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
@@ -160,16 +160,25 @@ public class HelloGridViewActivity extends Activity {
 				public void onClick(View v) {
 					String condition = "img_Id = '1'";
 					Cursor cursor = db.getAllRows("Image", condition);
-					int first_img = cursor.getInt(cursor.getColumnIndex("first_img"));
-					int second_img = cursor.getInt(cursor.getColumnIndex("second_img"));
-					int third_img = cursor.getInt(cursor.getColumnIndex("third_img"));
-					int fourth_img = cursor.getInt(cursor.getColumnIndex("fourth_img"));
-					int fifth_img = cursor.getInt(cursor.getColumnIndex("fifth_img"));
-					int sixth_img = cursor.getInt(cursor.getColumnIndex("sixth_img"));
-					int seventh_img = cursor.getInt(cursor.getColumnIndex("seventh_img"));
-					int eight_img = cursor.getInt(cursor.getColumnIndex("eight_img"));
-					// db.getAllRows("Image", condition);
-					cursor.close();
+					int first_img = 1;
+					int second_img = 1;
+					int third_img = 1;
+					int fourth_img = 0;
+					int fifth_img = 0;
+					int sixth_img = 0;
+					int seventh_img = 0;
+					int eight_img = 0;
+					if(cursor !=null && cursor.getCount()>0){
+					 first_img = cursor.getInt(cursor.getColumnIndex("first_img"));
+					 second_img = cursor.getInt(cursor.getColumnIndex("second_img"));
+					 third_img = cursor.getInt(cursor.getColumnIndex("third_img"));
+					 fourth_img = cursor.getInt(cursor.getColumnIndex("fourth_img"));
+					 fifth_img = cursor.getInt(cursor.getColumnIndex("fifth_img"));
+					 sixth_img = cursor.getInt(cursor.getColumnIndex("sixth_img"));
+					 seventh_img = cursor.getInt(cursor.getColumnIndex("seventh_img"));
+					 eight_img = cursor.getInt(cursor.getColumnIndex("eight_img"));
+					}
+					cursor.close();				
 					while (--lstClickCount >= 0) {
 						int seq = (7 - lstClickCount);
 					}
@@ -181,10 +190,15 @@ public class HelloGridViewActivity extends Activity {
 										if (a[5] == sixth_img) {
 											if (a[6] == seventh_img) {
 												if (a[7] == eight_img) {
-													Intent intent = new Intent(getBaseContext(),LoginPageActivity.class);
-													intent.putExtra(LoginPageActivity.BlockedActivityName, BlockedPackageName);
+													Intent intent  =new Intent(getBaseContext(), LoginPageActivity.class);
 													startActivity(intent);
-												} else {
+													/*Intent lockIntent = new Intent(getBaseContext(), LockScreenActivity.class);
+												lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+												lockIntent.putExtra(LockScreenActivity.BlockedActivityName, BlockedActivityName)
+												.putExtra(LockScreenActivity.BlockedPackageName, BlockedPackageName);
+												getApplication().startActivity(lockIntent);*/
+												} 
+												else {
 													wrongselection();
 												}
 											} else {
@@ -212,7 +226,6 @@ public class HelloGridViewActivity extends Activity {
 					} else {
 						wrongselection();
 					}
-					db.close();
 				}
 				private void wrongselection() {
 					alertDialog.setTitle("STOP ");
@@ -223,8 +236,7 @@ public class HelloGridViewActivity extends Activity {
 							Intent intent = new Intent(getApplicationContext(),	HelloGridViewActivity.class);
 							finish();
 							startActivity(intent);
-
-						}
+							}
 					});
 					alertDialog.setIcon(R.drawable.wrong);
 					alertDialog.show();
@@ -237,21 +249,29 @@ public class HelloGridViewActivity extends Activity {
 						Toast.makeText(HelloGridViewActivity.this,"Sequence No." + (lstClickCount + 1)+ " Image No. " + a[lstClickCount], 0).show();
 						if (lstClickCount <= 7) {
 							if (lstClickCount == 7) {
-
+								int first_img = 0;
+								int second_img = 0;
+								int third_img = 0;
+								int fourth_img = 0;
+								int fifth_img = 0;
+								int sixth_img = 0;
+								int seventh_img = 0;
+								int eight_img = 0;
 								String condition = "img_Id = '1'";
 								Cursor cursor = db.getAllRows("Image",condition);
-								int first_img = cursor.getInt(cursor.getColumnIndex("first_img"));
-								int second_img = cursor.getInt(cursor.getColumnIndex("second_img"));
-								int third_img = cursor.getInt(cursor.getColumnIndex("third_img"));
-								int fourth_img = cursor.getInt(cursor.getColumnIndex("fourth_img"));
-								int fifth_img = cursor.getInt(cursor.getColumnIndex("fifth_img"));
-								int sixth_img = cursor.getInt(cursor.getColumnIndex("sixth_img"));
-								int seventh_img = cursor.getInt(cursor.getColumnIndex("seventh_img"));
-								int eight_img = cursor.getInt(cursor.getColumnIndex("eight_img"));
-								db.getAllRows("Image", condition);
+								if(cursor !=null && cursor.getCount()>0){
+								 first_img = cursor.getInt(cursor.getColumnIndex("first_img"));
+								 second_img = cursor.getInt(cursor.getColumnIndex("second_img"));
+								 third_img = cursor.getInt(cursor.getColumnIndex("third_img"));
+								 fourth_img = cursor.getInt(cursor.getColumnIndex("fourth_img"));
+								 fifth_img = cursor.getInt(cursor.getColumnIndex("fifth_img"));
+								 sixth_img = cursor.getInt(cursor.getColumnIndex("sixth_img"));
+								 seventh_img = cursor.getInt(cursor.getColumnIndex("seventh_img"));
+								 eight_img = cursor.getInt(cursor.getColumnIndex("eight_img"));
+								}
+								cursor.close();
 								while (--lstClickCount >= 0) {
 									int seq = (7 - lstClickCount);
-
 								}
 								if (a[0] == first_img) {
 									if (a[1] == second_img) {
@@ -260,24 +280,19 @@ public class HelloGridViewActivity extends Activity {
 												if (a[4] == fifth_img) {
 													if (a[5] == sixth_img) {
 														if (a[6] == seventh_img) {
-															if (a[7] == eight_img) {
-																Intent intent = new Intent(getBaseContext(),LoginPageActivity.class);
-																intent.putExtra(LoginPageActivity.BlockedActivityName, BlockedPackageName);
+															if (a[7] == eight_img) {Intent lockIntent = new Intent(getApplicationContext(), LockScreenActivity.class);
+															lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-																startActivity(intent);
-
-															} else {
-																wrongselection();
+															lockIntent.putExtra(LockScreenActivity.BlockedActivityName, BlockedActivityName)
+															.putExtra(LockScreenActivity.BlockedPackageName, BlockedPackageName);} else {
+																wrongselection();																
 															}
-
 														} else {
 															wrongselection();
 														}
-
 													} else {
 														wrongselection();
 													}
-
 												} else {
 													wrongselection();
 												}
@@ -316,42 +331,46 @@ public class HelloGridViewActivity extends Activity {
 							Intent intent = new Intent(getApplicationContext(),HelloGridViewActivity.class);
 							finish();
 							startActivity(intent);
-
 						}
 					});
 					alertDialog.setIcon(R.drawable.wrong);
 					alertDialog.show();
-
 				}
 			});
-		}
+		
 		gridview.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v,int position, long id) {
 				Toast.makeText(HelloGridViewActivity.this, "" + position, 0).show();
 			}
 		});
 		cancel.setOnClickListener(new OnClickListener() {
-
 			public void onClick(View v) {
 				System.exit(0);
+				/*Intent intent = new Intent();
+				intent
+				.setAction(Intent.ACTION_MAIN)
+				.addCategory(Intent.CATEGORY_HOME)
+				.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				finish();*/
 			}
 		});
 	}
-
 	protected void countClick() {
-
 		myClickCount++;
 	}
-
 	protected void lstcountClick() {
 		lstClickCount++;
 	}
-
 	public String getPack() {
 		return pack;
 	}
-
 	public void setPack(String pack) {
 		this.pack = pack;
+	}
+	@Override
+	public void onDestroy(){
+		super.onDestroy();
+		db.close();
 	}
 }

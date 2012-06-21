@@ -92,7 +92,7 @@ public class RegistrationActivity extends Activity {
 
 		
 		}
-	mydb.close();
+
 	}
 
 	private void insertEntry(){	
