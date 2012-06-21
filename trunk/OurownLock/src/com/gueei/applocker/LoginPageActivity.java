@@ -1,5 +1,6 @@
 package com.gueei.applocker;
 
+import gueei.binding.observables.BooleanObservable;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -22,6 +23,8 @@ public class LoginPageActivity extends Activity {
 	public static final String BlockedActivityName = "locked activity name";
 	public static final String ACTION_APPLICATION_PASSED = "com.gueei.applocker.applicationpassedtest";
 	public static final String EXTRA_PACKAGE_NAME = "com.gueei.applocker.extra.package.name";
+
+	public final BooleanObservable Passed = new BooleanObservable(false);
 	DBAdapter db = new DBAdapter(this);
 	SQLiteDatabase myDatabase;
 	private EditText editText1, editText2;
@@ -34,6 +37,7 @@ public class LoginPageActivity extends Activity {
 			Cursor cursor = db.getRow(DATABASE_TABLE, un, pw);
 			cursor.close();
 			if (cursor != null && cursor.getCount() > 0) {
+				Passed.set(true);
 				this.sendBroadcast(new Intent().setAction(ACTION_APPLICATION_PASSED).putExtra(EXTRA_PACKAGE_NAME, getIntent().getStringExtra(BlockedPackageName)));
 				finish();				
 				/*
