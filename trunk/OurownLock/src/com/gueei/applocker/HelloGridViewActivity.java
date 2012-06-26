@@ -1,8 +1,12 @@
 package com.gueei.applocker;
 
+import gueei.binding.Binder;
+import gueei.binding.observables.BooleanObservable;
+
 import com.gueei.applocker.R;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.WallpaperManager;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,7 +27,7 @@ public class HelloGridViewActivity extends Activity {
 	public static final String BlockedActivityName = "locked activity name";
 	public static final String ACTION_APPLICATION_PASSED = "com.gueei.applocker.applicationpassedtest";
 	public static final String EXTRA_PACKAGE_NAME = "com.gueei.applocker.extra.package.name";
-
+	public final BooleanObservable Passed = new BooleanObservable(false);
 	int i = 0;
 	int myClickCount = 0;
 	int lstClickCount = 0;
@@ -33,7 +37,10 @@ public class HelloGridViewActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main2);
+		//setContentView(R.layout.main2);
+
+		Binder.setAndBindContentView(this, R.layout.main2, this);
+	
 		db.open();
 		db.createTables();
 		Button done = (Button) findViewById(R.id.done);
@@ -190,15 +197,19 @@ public class HelloGridViewActivity extends Activity {
 										if (a[5] == sixth_img) {
 											if (a[6] == seventh_img) {
 												if (a[7] == eight_img) {
-													Intent intent  =new Intent(getBaseContext(), LoginPageActivity.class);
-													intent.putExtra(LockScreenActivity.BlockedActivityName, BlockedActivityName)
-													.putExtra(LockScreenActivity.BlockedPackageName, BlockedPackageName);
-													startActivity(intent);
+													Passed.set(true);
+													getApplicationContext().sendBroadcast(new Intent().setAction(ACTION_APPLICATION_PASSED).putExtra(EXTRA_PACKAGE_NAME,getIntent().getStringExtra(BlockedPackageName)));
+													finish();
+												
+													/*Intent intent  =new Intent(getBaseContext(), LoginPageActivity.class);
+													intent.putExtra(LoginPageActivity.BlockedActivityName, BlockedActivityName)
+													.putExtra(LoginPageActivity.BlockedPackageName, BlockedPackageName);
+													startActivity(intent);*/
 													/*Intent lockIntent = new Intent(getBaseContext(), LockScreenActivity.class);
-												lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-												lockIntent.putExtra(LockScreenActivity.BlockedActivityName, BlockedActivityName)
-												.putExtra(LockScreenActivity.BlockedPackageName, BlockedPackageName);
-												getApplication().startActivity(lockIntent);*/
+													lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+													lockIntent.putExtra(LockScreenActivity.BlockedActivityName, BlockedActivityName)
+													.putExtra(LockScreenActivity.BlockedPackageName, BlockedPackageName);
+													getApplication().startActivity(lockIntent);*/
 												} 
 												else {
 													wrongselection();
@@ -282,11 +293,15 @@ public class HelloGridViewActivity extends Activity {
 												if (a[4] == fifth_img) {
 													if (a[5] == sixth_img) {
 														if (a[6] == seventh_img) {
-															if (a[7] == eight_img) {Intent lockIntent = new Intent(getApplicationContext(), LockScreenActivity.class);
+															if (a[7] == eight_img) {
+																Passed.set(true);
+																getApplicationContext().sendBroadcast(new Intent().setAction(ACTION_APPLICATION_PASSED).putExtra(EXTRA_PACKAGE_NAME,getIntent().getStringExtra(BlockedPackageName)));
+																finish();
+															/*Intent lockIntent = new Intent(getApplicationContext(), LockScreenActivity.class);
 															lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-															lockIntent.putExtra(LockScreenActivity.BlockedActivityName, BlockedActivityName)
-															.putExtra(LockScreenActivity.BlockedPackageName, BlockedPackageName);} else {
+															lockIntent.putExtra(LoginPageActivity.BlockedActivityName, BlockedActivityName)
+															.putExtra(LoginPageActivity.BlockedPackageName, BlockedPackageName);
+															*/} else {
 																wrongselection();																
 															}
 														} else {
@@ -344,14 +359,11 @@ public class HelloGridViewActivity extends Activity {
 		});
 		cancel.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				System.exit(0);
-				/*Intent intent = new Intent();
-				intent
-				.setAction(Intent.ACTION_MAIN)
-				.addCategory(Intent.CATEGORY_HOME)
+				Intent intent = new Intent();
+				intent.setAction(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME)
 				.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
-				finish();*/
+				finish();
 			}
 		});
 	}

@@ -90,8 +90,15 @@ public class ActivityStartingHandler implements ActivityStartingListener {
 					break;
 				}
 			}
-			lastRunningPackage = packageName;
+			lastRunningPackage = packageName; 
 		}
+	}
+	public String getLastRunningPackage() {
+		return lastRunningPackage;
+	}
+	public void setLastRunningPackage(String lastRunningPackage) {
+		this.lastRunningPackage = lastRunningPackage;
+		Toast.makeText(mContext, lastRunningPackage, 0).show();
 	}
 	private void blockActivity(String packageName, String activityName) {
 		Log.i("Detector", "Blocking: " + packageName);
