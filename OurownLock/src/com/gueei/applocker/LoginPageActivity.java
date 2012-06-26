@@ -18,14 +18,14 @@ import com.gueei.applocker.R;
 public class LoginPageActivity extends Activity {
 	private static final String DATABASE_TABLE = "loginTable";
 	private static final String rname = null;
-
+	ActivityStartingHandler ash;
 	public static final String BlockedPackageName = "locked package name";
 	public static final String BlockedActivityName = "locked activity name";
 	public static final String ACTION_APPLICATION_PASSED = "com.gueei.applocker.applicationpassedtest";
 	public static final String EXTRA_PACKAGE_NAME = "com.gueei.applocker.extra.package.name";
-
 	public final BooleanObservable Passed = new BooleanObservable(false);
 	DBAdapter db = new DBAdapter(this);
+	
 	SQLiteDatabase myDatabase;
 	private EditText editText1, editText2;
 	private void check(String un, String pw) {
@@ -35,20 +35,22 @@ public class LoginPageActivity extends Activity {
 			String id = "0";
 			String whereCheck = "u_name = '" + un + "' AND p_word = '" + pw	+ "'";
 			Cursor cursor = db.getRow(DATABASE_TABLE, un, pw);
-			
+			String last=ash.getLastRunningPackage();
+			 
 			if (cursor != null && cursor.getCount() > 0) {
-				Passed.set(true);
-				this.sendBroadcast(new Intent().setAction(ACTION_APPLICATION_PASSED).putExtra(EXTRA_PACKAGE_NAME, getIntent().getStringExtra(BlockedPackageName)));
+				
+			/*	this.sendBroadcast(new Intent().setAction(ACTION_APPLICATION_PASSED).putExtra(EXTRA_PACKAGE_NAME, getIntent().getStringExtra(BlockedPackageName)));
 				finish();				
-				/*
-				if (getApplicationContext().getPackageName().equals("com.gueei.applocker")) {
+				*/
+				if (last.equals("com.gueei.applocker")) {
+					Passed.set(true);
 					Intent intent = new Intent(getApplicationContext(),AppLockerActivity.class);
 					startActivity(intent);
-				} else {
+				} else {Passed.set(true);
 					getApplicationContext().sendBroadcast(new Intent().setAction(ACTION_APPLICATION_PASSED).putExtra(EXTRA_PACKAGE_NAME,getIntent().getStringExtra(BlockedPackageName)));
 					finish();
 				}
-			*/} else {
+			} else {
 				Toast.makeText(getBaseContext(), " INVALID CREDENTIALS",Toast.LENGTH_SHORT).show();
 			}
 			cursor.close();
