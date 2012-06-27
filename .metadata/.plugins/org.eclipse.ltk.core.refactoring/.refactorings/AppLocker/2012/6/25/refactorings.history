@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;AppLocker/res/drawable/IMG_11062012_165512.png&apos; to &apos;IMG.png&apos;" description="Rename resource &apos;IMG_11062012_165512.png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/drawable/IMG_11062012_165512.png" name="IMG.png" stamp="1340087350755" updateReferences="true"/>
+</session>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gueei.applocker"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="7" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_LOGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" >
+    </uses-permission>
+    <application
+        android:name="AppLockerApplication"
+        android:icon="@drawable/launcher_icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".AppLockerActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HelloGridViewActivity" 
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:noHistory="true"     
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".LoginPageActivity"
+            android:excludeFromRecents="true"
+            android:noHistory="true"            
+            android:launchMode="singleInstance"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".RegistrationActivity"
+            android:label="@string/app_name" >
+        </activity>
+       
+        <activity
+            android:name="AppLockerPreferenceActivity"
+            android:label="@string/appLockerPreferenceActivityName"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="ApplicationListActivity"
+            android:label="@string/appLockerPreferenceActivityName" >
+        </activity>
+        <service android:name="DetectorService" >
+        </service>
+        <activity
+            android:name="LockScreenActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <receiver android:name="StartupServiceReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
