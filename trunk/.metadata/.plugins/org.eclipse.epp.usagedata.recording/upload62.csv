@@ -1,0 +1,276 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"button.xml: ScrollView can host only one direct child",1340708659241
+error,log,,,"button.xml: ScrollView can host only one direct child",1340708659664
+error,log,,,"button.xml: ScrollView can host only one direct child",1340708661538
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708672790
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708673119
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708673416
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708674306
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708675805
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708676455
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708677538
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708679644
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708680665
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708682300
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708683642
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340708684249
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340708687191
+error,log,,,"button.xml: com.android.layoutlib.bridge.MockView cannot be cast to android.view.ViewGroup",1340708688379
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340708719394
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340708793096
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1340708806215
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1340708809936
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340708817901
+error,log,,,"button.xml: com.android.layoutlib.bridge.MockView cannot be cast to android.view.ViewGroup",1340708819504
+error,log,,,"button.xml: com.android.layoutlib.bridge.MockView cannot be cast to android.view.ViewGroup",1340708824839
+error,log,,,"button.xml: com.android.layoutlib.bridge.MockView cannot be cast to android.view.ViewGroup",1340708824985
+error,log,,,"button.xml: com.android.layoutlib.bridge.MockView cannot be cast to android.view.ViewGroup",1340708826720
+error,log,,,"button.xml: com.android.layoutlib.bridge.MockView cannot be cast to android.view.ViewGroup",1340708830554
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340708836570
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340708838609
+error,log,,,"button.xml: com.android.layoutlib.bridge.MockView cannot be cast to android.view.ViewGroup",1340708840930
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340708851623
+executed,command,,,"com.android.ide.eclipse.adt.debug.launching.LaunchShortcut.run",1340708853330
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340708853353
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340708854286
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340708854944
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340708859968
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340708884800
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340708918935
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340708920228
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340708925805
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340708949022
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340708969854
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340709002281
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709003394
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340709021168
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709022226
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340709028616
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340709029768
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709035744
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340709073836
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340709085541
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709087173
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709094987
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340709106784
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709107522
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709122306
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709125952
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709196713
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1340709232412
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1340709236288
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709236954
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340709358712
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340709360415
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709362338
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340709374882
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709376616
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340709379258
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340709383163
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709384561
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489329
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489332
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489337
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489345
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489353
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489361
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489387
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489390
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489393
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489401
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489409
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489417
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489425
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489433
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489440
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489448
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489456
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489464
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489472
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489480
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489488
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489504
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489512
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489520
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489528
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489536
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489544
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489560
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489576
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489608
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489640
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489656
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489664
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489672
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489680
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489688
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489704
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709489720
+error,log,,,"TableRowRule.onResizeEnd() failed: java.lang.NullPointerException",1340709489881
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340709506667
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340709508398
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709518583
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709545035
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709545752
+no handler,command,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.jdt.ui.edit.text.java.correction.assist.proposals",1340709552816
+no handler,command,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.jdt.ui.edit.text.java.correction.assist.proposals",1340709553168
+started,bundle,org.eclipse.ui.cheatsheets,3.4.100.v20110425,"org.eclipse.ui.cheatsheets",1340709554810
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709554914
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.window.quickAccess",1340709554920
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709560467
+no handler,command,org.eclipse.gef,,"org.eclipse.gef.zoom_out",1340709568711
+no handler,command,org.eclipse.gef,,"org.eclipse.gef.zoom_out",1340709568951
+no handler,command,org.eclipse.gef,,"org.eclipse.gef.zoom_out",1340709569175
+no handler,command,org.eclipse.gef,,"org.eclipse.gef.zoom_out",1340709569391
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340709607876
+executed,command,,,"com.android.ide.eclipse.adt.debug.launching.LaunchShortcut.run",1340709609874
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709610945
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709651929
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340709651978
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709673676
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709710252
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340709736206
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1340709736904
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709807506
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709809254
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709811561
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709819981
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1340709820320
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340709822278
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709828216
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709829892
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709897415
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709905464
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340709909494
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709922775
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340709923555
+executed,command,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.ui.project.cleanAction",1340709923561
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709942132
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709942135
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709942160
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709942184
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709942200
+error,log,,,"TableRowRule.onResizeUpdate() failed: java.lang.NullPointerException",1340709942218
+error,log,,,"TableRowRule.onResizeEnd() failed: java.lang.NullPointerException",1340709942468
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1340709993875
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1340710001082
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710001898
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340710023287
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710024371
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340710111346
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710112844
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710128577
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710142006
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710169387
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340710189397
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710192957
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1340710239298
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1340710251580
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710252490
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340710267787
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340710270578
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710274802
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340710279685
+executed,command,,,"com.android.ide.eclipse.adt.debug.launching.LaunchShortcut.run",1340710281766
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340710283738
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710286789
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710309574
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340710320590
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710327474
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340710333396
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710339372
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340710353357
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710356263
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340710357835
+executed,command,,,"com.android.ide.eclipse.adt.debug.launching.LaunchShortcut.run",1340710359984
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710360593
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710407568
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340710407606
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340710416792
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710417788
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340710493846
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340710496756
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340710498503
+executed,command,,,"com.android.ide.eclipse.adt.debug.launching.LaunchShortcut.run",1340710500935
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710505790
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340710547754
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710547759
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340710547769
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340710547860
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710570500
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710571359
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710578307
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710597684
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340710605656
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340710605764
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710614388
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340710620432
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340710622688
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340710626807
+executed,command,,,"com.android.ide.eclipse.adt.debug.launching.LaunchShortcut.run",1340710630064
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710665126
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710860116
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710862137
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340710967777
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340710968471
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711005359
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711163733
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173781
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173784
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173810
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173812
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173828
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173866
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173868
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173937
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173939
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173941
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173959
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173973
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173987
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711173988
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711174002
+error,log,,,"TableLayoutRule.onResizeUpdate() failed: java.lang.NullPointerException",1340711174027
+error,log,,,"TableLayoutRule.onResizeEnd() failed: java.lang.NullPointerException",1340711174261
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340711191809
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340711208298
+executed,command,,,"com.android.ide.eclipse.adt.debug.launching.LaunchShortcut.run",1340711210627
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711211626
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340711304298
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711304303
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340711304311
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340711304411
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340711312375
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340711321322
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340711324750
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1340711329203
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340711338435
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340711351016
+executed,command,,,"com.android.ide.eclipse.adt.debug.launching.LaunchShortcut.run",1340711353082
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711354319
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340711423629
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711423632
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340711423639
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340711423711
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711453507
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711454155
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711454939
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711479627
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340711529680
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340711532375
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340711536997
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340711537546
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340711540331
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340711540755
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340711543619
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340711544136
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1340711549557
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1340711550735
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1340711568295
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340711571555
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1340711576476
+closed,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340711576476
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1340711579042
+opened,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340711580407
+activated,editor,com.android.ide.eclipse.adt,18.0.0.v201203301601-306762,"com.android.ide.eclipse.editors.CommonXmlEditor",1340711580449
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1340711595412

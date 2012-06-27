@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;DBAdapter.java&apos; to &apos;Gois/src&apos;&#x0D;&#x0A;- Original project: &apos;HelloGridView&apos;&#x0D;&#x0A;- Destination element: &apos;Gois/src&apos;&#x0D;&#x0A;- Original element: &apos;com.example.HelloGridView.DBAdapter.java&apos;" description="Copy compilation unit" destination="=Gois/src" element1="/src&lt;com.example.HelloGridView{DBAdapter.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1340773981953" units="1" version="1.0"/>
+</session>
