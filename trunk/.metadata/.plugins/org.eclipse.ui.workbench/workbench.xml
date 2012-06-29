@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="50" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" width="1024" x="312" y="72">
+<window height="728" width="1024" x="39" y="104">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.android.ide.eclipse.ddms.views.LogCatView"/>
 <orientation position="512" view="org.eclipse.ui.console.ConsoleView"/>
@@ -11,7 +11,7 @@
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="152" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="136" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="adt.actionSet.avdManager" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="adt.actionSet.lint" itemType="typeToolBarContribution" x="53" y="22"/>
@@ -42,6 +42,10 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
 </presentation>
 </folder>
 </info>
@@ -52,6 +56,18 @@
 </editor>
 <editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="button.xml" partName="button.xml" path="C:/Users/sinhas.METAOPTIONLLC/Desktop/demo-app-locker/Gois/res/layout/button.xml" title="button.xml" tooltip="Gois/res/layout/button.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gois/res/layout/button.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="user_login.xml" partName="user_login.xml" path="C:/Users/sinhas.METAOPTIONLLC/Desktop/demo-app-locker/GoodsOrderInventorySystemPro/res/layout/user_login.xml" title="user_login.xml" tooltip="GoodsOrderInventorySystemPro/res/layout/user_login.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GoodsOrderInventorySystemPro/res/layout/user_login.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="title_right_background.xml" partName="title_right_background.xml" path="C:/Users/sinhas.METAOPTIONLLC/Desktop/demo-app-locker/Gois/res/color/title_right_background.xml" title="title_right_background.xml" tooltip="Gois/res/color/title_right_background.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gois/res/color/title_right_background.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles.xml" partName="styles.xml" path="C:/Users/sinhas.METAOPTIONLLC/Desktop/demo-app-locker/Gois/res/values/styles.xml" title="styles.xml" tooltip="Gois/res/values/styles.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gois/res/values/styles.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles.xml" partName="styles.xml" path="C:/Users/sinhas.METAOPTIONLLC/Desktop/demo-app-locker/Gois/res/values/styles.xml" title="styles.xml" tooltip="Gois/res/values/styles.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gois/res/values/styles.xml"/>
 </editor>
 </editors>
 <views>
@@ -85,9 +101,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (16 items)"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -142,7 +155,7 @@
 <view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
 <view id="com.android.ide.eclipse.ddms.views.AllocTrackerView" partName="Allocation Tracker"/>
 </views>
-<perspectives activePart="com.android.ide.eclipse.editors.CommonXmlEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
 <alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
@@ -574,7 +587,7 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.22309971" ratioLeft="226" ratioRight="787" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.29121423" ratioLeft="295" ratioRight="718" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.74959874" ratioLeft="467" ratioRight="156" relationship="4" relative="org.eclipse.ui.editorss">
 <folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
@@ -620,156 +633,129 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Gois/src/com/metaoption/gois/GoisActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Gois/res/layout/button.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Gois/res/values/styles.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Gois/src/com/metaoption/gois/GoisActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/Gois/res/layout/button.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Gois/res/layout/button.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Gois/res/layout/button.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Gois/src/com/metaoption/gois/GoisActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Gois/res/layout/button.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/GoodsOrderInventorySystemPro/res/color/list_color.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/GoodsOrderInventorySystemPro/res/color/button_color.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/GoodsOrderInventorySystemPro/res/color/button_add_background.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/GoodsOrderInventorySystemPro/res/color/button_background.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Gois/res/values/styles.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/GoodsOrderInventorySystemPro/res/layout/user_login.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Gois/res/color/title_right_background.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/GoodsOrderInventorySystemPro/res/layout/user_login.xml"/>
 </editors>
-<item historyLabel="button.xml" index="2">
-<position/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2632" y="212"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2991" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2632" y="212"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="3703" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="3859" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2854" y="214"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2632" y="212"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="3132" y="842"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="3998" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="3131" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="1257" y="194"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2124" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="3130" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2198" y="336"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2577" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2198" y="336"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2844" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="3444" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2244" y="274"/>
-</item>
-<item historyLabel="GoisActivity.java" index="0">
-<position info="not_deleted" x="335" y="0"/>
-</item>
-<item historyLabel="button.xml" index="1"/>
-<item historyLabel="GoisActivity.java" index="0">
-<position info="not_deleted" x="335" y="0"/>
-</item>
-<item historyLabel="button.xml" index="1">
-<position/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="875" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position/>
-</item>
-<item historyLabel="GoisActivity.java" index="0">
-<position info="not_deleted" x="335" y="0"/>
-</item>
-<item historyLabel="button.xml" index="3">
-<position info="not_deleted" x="4354" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position/>
-</item>
-<item historyLabel="GoisActivity.java" index="0">
-<position info="not_deleted" x="335" y="0"/>
-</item>
-<item historyLabel="button.xml" index="4"/>
-<item historyLabel="GoisActivity.java" index="0">
-<position info="not_deleted" x="335" y="0"/>
-</item>
-<item historyLabel="button.xml" index="4">
-<position info="not_deleted" x="3704" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="3629" y="881"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="4826" y="360"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="4875" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="4894" y="360"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="4756" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="5589" y="309"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="4757" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="993" y="0"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="2950" y="281"/>
-</item>
-<item historyLabel="button.xml" index="2">
-<position info="not_deleted" x="1754" y="339"/>
-</item>
-<item historyLabel="GoisActivity.java" index="5">
-<position info="not_deleted" x="335" y="0"/>
-</item>
-<item historyLabel="button.xml" index="6"/>
-<item historyLabel="GoisActivity.java" index="5">
+<item historyLabel="styles.xml" index="1"/>
+<item historyLabel="button.xml" index="0"/>
+<item historyLabel="styles.xml" index="1"/>
+<item historyLabel="GoisActivity.java" index="2">
 <position info="not_deleted" x="315" y="0"/>
 </item>
-<item active="true" historyLabel="button.xml" index="6"/>
+<item historyLabel="button.xml" index="0">
+<position/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position info="not_deleted" x="880" y="306"/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position info="not_deleted" x="273" y="255"/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position info="not_deleted" x="533" y="399"/>
+</item>
+<item historyLabel="list_color.xml" index="4"/>
+<item historyLabel="button.xml" index="0">
+<position info="not_deleted" x="534" y="448"/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position info="not_deleted" x="1348" y="417"/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position info="not_deleted" x="2110" y="466"/>
+</item>
+<item historyLabel="button_color.xml" index="5"/>
+<item historyLabel="button_add_background.xml" index="6"/>
+<item historyLabel="button_background.xml" index="7"/>
+<item historyLabel="button_add_background.xml" index="6"/>
+<item historyLabel="button_color.xml" index="5"/>
+<item historyLabel="styles.xml" index="8"/>
+<item historyLabel="button_color.xml" index="5"/>
+<item historyLabel="styles.xml" index="8"/>
+<item historyLabel="button.xml" index="0">
+<position info="not_deleted" x="2110" y="466"/>
+</item>
+<item historyLabel="user_login.xml" index="9">
+<position info="not_deleted" x="3393" y="416"/>
+</item>
+<item historyLabel="button.xml" index="0"/>
+<item historyLabel="title_right_background.xml" index="10"/>
+<item historyLabel="user_login.xml" index="9"/>
+<item historyLabel="button.xml" index="0">
+<position info="not_deleted" x="1571" y="0"/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position info="not_deleted" x="2110" y="466"/>
+</item>
+<item historyLabel="title_right_background.xml" index="10"/>
+<item historyLabel="user_login.xml" index="9">
+<position info="not_deleted" x="3594" y="178"/>
+</item>
+<item historyLabel="button.xml" index="0">
+<position info="not_deleted" x="2110" y="466"/>
+</item>
+<item historyLabel="user_login.xml" index="9"/>
+<item historyLabel="title_right_background.xml" index="10"/>
+<item historyLabel="button.xml" index="0">
+<position info="not_deleted" x="2110" y="466"/>
+</item>
+<item historyLabel="user_login.xml" index="9">
+<position info="not_deleted" x="3503" y="80"/>
+</item>
+<item historyLabel="user_login.xml" index="11">
+<position info="not_deleted" x="2043" y="246"/>
+</item>
+<item historyLabel="GoisActivity.java" index="2">
+<position info="not_deleted" x="315" y="0"/>
+</item>
+<item historyLabel="button.xml" index="0">
+<position info="not_deleted" x="1320" y="0"/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position info="not_deleted" x="273" y="255"/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position info="not_deleted" x="988" y="354"/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position info="not_deleted" x="755" y="0"/>
+</item>
+<item historyLabel="button.xml" index="3">
+<position info="not_deleted" x="988" y="354"/>
+</item>
+<item historyLabel="styles.xml" index="8"/>
+<item active="true" historyLabel="button.xml" index="0"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -790,6 +776,27 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles.xml" tooltip="Gois/res/values/styles.xml">
+<persistable path="/Gois/res/values/styles.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="title_right_background.xml" tooltip="Gois/res/color/title_right_background.xml">
+<persistable path="/Gois/res/color/title_right_background.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="user_login.xml" tooltip="GoodsOrderInventorySystemPro/res/layout/user_login.xml">
+<persistable path="/GoodsOrderInventorySystemPro/res/layout/user_login.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="button_background.xml" tooltip="GoodsOrderInventorySystemPro/res/color/button_background.xml">
+<persistable path="/GoodsOrderInventorySystemPro/res/color/button_background.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="button_add_background.xml" tooltip="GoodsOrderInventorySystemPro/res/color/button_add_background.xml">
+<persistable path="/GoodsOrderInventorySystemPro/res/color/button_add_background.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="button_color.xml" tooltip="GoodsOrderInventorySystemPro/res/color/button_color.xml">
+<persistable path="/GoodsOrderInventorySystemPro/res/color/button_color.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="list_color.xml" tooltip="GoodsOrderInventorySystemPro/res/color/list_color.xml">
+<persistable path="/GoodsOrderInventorySystemPro/res/color/list_color.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="button.xml" tooltip="Gois/res/layout/button.xml">
 <persistable path="/Gois/res/layout/button.xml"/>
 </file>
@@ -813,27 +820,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LockScreenActivity.java" tooltip="OurownLock/src/com/gueei/applocker/LockScreenActivity.java">
 <persistable path="/OurownLock/src/com/gueei/applocker/LockScreenActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DetectorService.java" tooltip="OurownLock/src/com/gueei/applocker/DetectorService.java">
-<persistable path="/OurownLock/src/com/gueei/applocker/DetectorService.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HelloGridViewActivity.java" tooltip="OurownLock/src/com/gueei/applocker/HelloGridViewActivity.java">
-<persistable path="/OurownLock/src/com/gueei/applocker/HelloGridViewActivity.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="View.class" tooltip="android.view.View">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=OurownLock/D:\/android-sdk1\/platforms\/android-2.1\/android.jar&lt;android.view(View.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ActivityStartingHandler.java" tooltip="OurownLock/src/com/gueei/applocker/ActivityStartingHandler.java">
-<persistable path="/OurownLock/src/com/gueei/applocker/ActivityStartingHandler.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="AppLocker/AndroidManifest.xml">
-<persistable path="/AppLocker/AndroidManifest.xml"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Object.class" tooltip="java.lang.Object">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=OurownLock/D:\/android-sdk1\/platforms\/android-2.1\/android.jar&lt;java.lang(Object.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DBAdapter.java" tooltip="OurownLock/src/com/gueei/applocker/DBAdapter.java">
-<persistable path="/OurownLock/src/com/gueei/applocker/DBAdapter.java"/>
 </file>
 </mruList>
 </workbench>
